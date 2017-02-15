@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/vs.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -24,6 +24,11 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				<!-- LaTeX Macros -->
+				$\newcommand{\ct}[1]{\mathsf{#1}}$
+				$\newcommand{\dif}[2][]{\mathrm{d}^{#1} #2}$
+				$\newcommand{\ddrt}[3][]{\frac{\dif[#1]{#2}}{\dif{#3}^{#1}}}$
+
 				<section>
 					<h3>
 						Effet d'un champ électrique sur la structure et la dynamique de
@@ -33,11 +38,114 @@
 				</section>
 
 				<section>
-					<h3>Introduction</h3>
+					<section>
+						<h3>Introduction</h3>
+					</section>
+
+					<section>
+						<h4>Suspensions colloïdales</h4>
+						
+						<ul>
+							<li>Applications : biologie, alimentaire, nanotechnologie, etc</li>
+							<li>Flexibilité : modulation des interactions entre colloïdes
+									et des propriétés du milieu,
+									de la géométrie et du champ extérieur
+							</li>
+							<li>
+								Généricité : étude et élaboration de colloïdes de différentes
+								tailles (dizaine de nanomètres au micromètres)
+								&rarr; large gamme de temps de réponse.
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>Travaux antérieurs ?</h4>
+						<ul>
+							<li>PINBI ?</li>
+						</ul>
+					</section>
 				</section>
 
 				<section>
-					<h3>Méthodes</h3>
+					<section>
+						<h3>Méthodes de simulation</h3>
+					</section>
+
+					<section>
+						<h4>Introduction </h4>
+						<ul>
+							<li>
+								Objectif : étude d'un système comportant un grand nombre
+								de particules en interactions
+							</li>
+							<li>Fondement théorique : mécanique statistique</li>
+							<li>Mise en &oelig;uvre : simulations numériques</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>Méthodes de simulation</h4>
+						<ol>
+							<li>Modélisation et calcul des interactions</li>
+							<li>Evolution à partir d'un état initial</li>
+							<li>Reproductibilité des résultats</li>
+						</ol>
+					</section>
+
+					<section>
+						<h4>Monte-Carlo Metropolis</h4>
+						<p>Echantillionnage préférentiel</p>
+						<ul>
+							<li>
+								$p(x)$ densité de probabilité de la configuration $x$ :								
+								$$\langle a \rangle_p = \int \dif{x}\ p(x) a(x)$$
+							</li>
+							<li>
+								$x_1, ..., x_\ct{M}$ configurations pondérés 
+								et $\ct{M} \to \infty$ :
+								$$\frac{1}{\ct{M}} \sum_{\ct{i}=1}^\ct{M}
+									a(x_\ct{i}) \longrightarrow \langle a \rangle_p$$
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>Monte-Carlo Metropolis</h4>
+						<p>Algorithm de Metropolis</p>
+						<p>$A[x \to y]$ probabilité d'acceptation :</p>
+						<pre>
+							<code data-trim>
+									if (acceptation_probability < 1.) then
+										call random_number(rand)
+										if (rand < acceptation_probability) then
+											success = .true.
+										else
+											success = .false.
+										end if
+									else
+										success = .true.
+									end if
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h4>Dynamique moléculaire</h4>
+						<p>Verlet vitesse :</p>
+						$$\vec{x}(t+\Delta t) = \vec{x}(t) + \Delta t \ddrt{x(t)}{t} +
+            				\frac{\Delta t^2}{2} \ddrt[2]{x(t)}{t}$$
+						$$\vec{v}(t + \Delta t) = \vec{v}(t) + \frac{\Delta t}{2m}
+            				\left( \vec{F}(t) + \vec{F}(t + \Delta t) \right)$$
+					</section>
+
+					<section>
+						<h4>Dynamique de Langevin</h4>
+					</section>
+					
+					<section>
+						<h4>Sommes d'Ewald</h4>
+					</section>
 				</section>
 
 				<section>
@@ -47,6 +155,30 @@
 							apolaires : propriétés à l'équilibre
 						</h3>
 					</section>
+
+					<section>
+						<h4>Modèle</h4>
+					</section>
+
+					<section>
+						<h4>Equilibres de phases</h4>
+					</section>
+
+					<section>
+						<h4>Champ nul</h4>
+					</section>
+
+					<section>
+						<h4>Champ perpendiculaire</h4>
+					</section>
+
+					<section>
+						<h4>Champ parallèle</h4>
+					</section>
+
+					<section>
+						<h4>Synthèse</h4>
+					</section>
 				</section>
 
 				<section>
@@ -55,6 +187,30 @@
 							Effet d'un champ sur un mélange confiné de sphères dipolaires et 
 							apolaires : aspects dynamiques
 						</h3>
+					</section>
+
+					<section>
+						<h4>Modèle</h4>
+					</section>
+
+					<section>
+						<h4>Méthodes de simulation</h4>
+					</section>
+
+					<section>
+						<h4>Comparaison Monte-Carlo - dynamique moléculaire</h4>
+					</section>
+
+					<section>
+						<h4>Dynamique de l'inversion de population sous champ</h4>
+					</section>
+
+					<section>
+						<h4>Cycles irréversibles</h4>
+					</section>
+
+					<section>
+						<h4>Rôle de la taille des particules et loi d'échelle</h4>
 					</section>
 				</section>
 
