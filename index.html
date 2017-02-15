@@ -24,12 +24,21 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<!-- LaTeX Macros -->
-				$\newcommand{\ct}[1]{\mathsf{#1}}$
-				$\newcommand{\dif}[2][]{\mathrm{d}^{#1} #2}$
-				$\newcommand{\ddrt}[3][]{\frac{\dif[#1]{#2}}{\dif{#3}^{#1}}}$
-
 				<section>
+					<!-- LaTeX Macros -->
+					$\newcommand{\ct}[1]{\mathsf{#1}}$
+					$\newcommand{\dif}[2][]{\mathrm{d}^{#1} #2}$
+					$\newcommand{\ddrt}[3][]{\frac{\dif[#1]{#2}}{\dif{#3}^{#1}}}$
+
+					$\def\boltzmannConstant{k_\text{B}}$
+					$\def\SMcomposition{x}$
+					$\def\wallSeparation{H}$
+					$\def\dip{\mu}$
+					$\def\permittivity{\varepsilon}$
+					$\def\nonAdditivity{\delta}$
+				</section>
+
+				<section data-transition="fade-in">
 					<h3>
 						Effet d'un champ électrique sur la structure et la dynamique de
         				suspensions colloïdales confinées : étude numérique par simulation
@@ -154,14 +163,76 @@
 							Effet d'un champ sur un mélange confiné de sphères dipolaires et
 							apolaires : propriétés à l'équilibre
 						</h3>
+						$\def\unitLength{\sigma}$
+						$\def\unitEnergy{\epsilon}$
 					</section>
 
 					<section>
 						<h4>Modèle</h4>
+						<p>Géométrie, composition et interaction à courte portée</p>
+
+						<p>SA, SD : sphères apolaires et dipolaires</p>
+						<table>
+							<td>
+								<img data-src="media/results/field_mixture/geometry.svg">
+							</td>
+							<td>
+								<ul>
+									<li>
+										Faible confinement :
+										$\wallSeparation = 20 \unitLength$
+									</li>
+									<li>Mélange équimolaire : $\SMcomposition = 0,5$</li>
+									<li>
+										Interactions dures :
+										$u(r) / \boltzmannConstant T = \infty [r \leq \sigma]$
+									</li>
+									<li>
+										Non-additivité :
+										$\sigma_\text{SD-SA} = (1 + \nonAdditivity) \sigma$
+									</li>
+								</ul>
+							</td>
+						</table>
+					</section>
+
+					<section>
+						<h4>Modèle</h4>
+						<p>Interactions dipolaires et champ extérieur</p>
+						<ul>
+							<li>
+								$u(\vec{r}_\ct{ij}, \vec{\dip}_\ct{i}, \vec{\dip}_\ct{j}) =
+								\frac{1}{4 \pi \permittivity}
+								\left[
+									\frac{\vec{\dip}_\ct{i} \cdot \vec{\dip}_\ct{j}}{r_\ct{ij}^3} -
+									3 \frac{(\vec{\dip}_\ct{i} \cdot \vec{r}_\ct{ij})
+										(\vec{r}_\ct{ij} \cdot \vec{\dip}_\ct{j})}{r_\ct{ij}^5}
+								\right]$
+							</li>
+							<li>
+								Champ : nul, perpendiculaire ou parallèle
+							</li>
+						</ul>
 					</section>
 
 					<section>
 						<h4>Equilibres de phases</h4>
+
+						<p>Courbes de coexistence obtenues par GEMC</p>
+						<table>
+							<td>
+								<img data-src="media/results/field_mixture/coex_bulk.svg">
+								<span><br/>bulk : pour différents $\nonAdditivity$</span>
+							</td>
+							<td>
+								<img data-src="media/results/field_mixture/coex_slab.svg">
+								<span>slab</span>
+							</td>
+						</table>
+						<ul>
+							<li>La non-additivité favorise la démixtion.</li>
+							<li>Les murs stabilisent le mélange.</li>
+						</ul>
 					</section>
 
 					<section>
