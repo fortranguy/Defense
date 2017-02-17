@@ -1,0 +1,3 @@
+- Ajouter un plan au début (vers Intro)
+- modèle : factoriser et placer avant
+- [tension] : deux parties principalement : équilibre puis dynamique

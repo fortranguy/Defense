@@ -36,6 +36,8 @@
 					$\def\dip{\mu}$
 					$\def\permittivity{\varepsilon}$
 					$\def\nonAdditivity{\delta}$
+					$\def\unitLength{\sigma}$
+					$\def\unitEnergy{\epsilon}$
 				</section>
 
 				<section data-transition="fade-in">
@@ -69,10 +71,77 @@
 					</section>
 
 					<section>
-						<h4>Travaux antérieurs ?</h4>
+						<h4>Situation physique</h4>
+						PINBI : un mélange binaire instable confiné et dans lequel une
+						des espèces est dipolaire (couplage)
 						<ul>
-							<li>PINBI ?</li>
+							<li>
+								confinement : existe dans la réalité, comportement sans équivalent
+								en phase volumique (structuration, mouillage, désorption) 
+							</li>
+							<li>
+								champ électrique : manipulation de l'état du système, moyen
+								souple
+							</li>
 						</ul>
+					</section>
+
+					<section>						
+						<h4>Modèle</h4>
+
+						<p>SA, SD : sphères apolaires et dipolaires</p>
+						<p>mélange binaire : une espèce dipolaire et l'autre non,
+							tout : interaction à courte portée : simplification : uniquement répulsive</p>
+						<p>
+							mélange HS + dip : à diamètre non-additif
+							(MD : assouplissement du potentiel à courte portée : WCA)
+						</p>
+					</section>
+
+					<section>
+						<h4>Contexte et Motivation</h4>
+						<p>Travaux antérieux : PINBI : inversion de population </p>
+						<ul>
+							<li>Approfondir la situation à l'équilibre</li>
+							<li>
+								Qu'en est-il de la dynamique ?
+								Nouveauté : dynamique pour applications
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>Modèle</h4>
+
+						<ul>
+							<li>deux murs : sans interface phase volumique</li>
+							<li>géométrie plus réaliste : avec interface slab/bulk</li>
+						</ul>
+						<strong>HS+dip non add</strong> : ingrédient essentiel.
+						Mais trop spécifique ?
+					</section>
+
+					<section>
+						<h4>Schéma</h4>
+						cf. S.A.
+						e.g.
+						<ul>
+							<li>coquille vide &rarr; pas de moment dipolaire</li>
+							<li>l'autre : pleine, $\dip$ permanant ou induit</li>
+							<li>
+								stabilisation stérique : chaînes de polymère : si nature différente :
+								non-additif : la règle
+							</li>
+						</ul>
+						Si atomique : ésotérique ?
+
+						(Le système le plus proche : saccana)
+						Facilement réalisable pour les colloïdes.
+						<!-- Mettre les figures -->
+						e.g. ferrocolloïdes : fig. 9 séparation de phase induite par champ
+						nous : champ localisé
+						principe des filtres colloïdaux (cf. réf. S.A.)
+						<!-- Qu'est-ce qu'un filtre colloïdal ? -->
 					</section>
 				</section>
 
@@ -137,6 +206,7 @@
 									end if
 							</code>
 						</pre>
+						<!-- Schéma plutôt qu'algorithme ? -->
 					</section>
 
 					<section>
@@ -163,15 +233,11 @@
 							Effet d'un champ sur un mélange confiné de sphères dipolaires et
 							apolaires : propriétés à l'équilibre
 						</h3>
-						$\def\unitLength{\sigma}$
-						$\def\unitEnergy{\epsilon}$
 					</section>
 
 					<section>
 						<h4>Modèle</h4>
 						<p>Géométrie, composition et interaction à courte portée</p>
-
-						<p>SA, SD : sphères apolaires et dipolaires</p>
 						<table>
 							<td>
 								<img data-src="media/results/field_mixture/geometry.svg">
@@ -194,6 +260,15 @@
 								</ul>
 							</td>
 						</table>
+					</section>
+
+					<section>
+						<h4>Première étape : MolPhys</h4>
+						Modèle
+						Formule
+						Méthodes : MC (code homemade)
+						Variables de contrôles
+						Sélection des principaux résultats
 					</section>
 
 					<section>
