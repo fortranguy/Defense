@@ -1,3 +1,5 @@
 - Ajouter un plan au début (vers Intro)
 - modèle : factoriser et placer avant
 - [tension] : deux parties principalement : équilibre puis dynamique
+- courbes : (e.g. profils de densité) : revoir les légendes, la charte de couleur
+- conversion : électrique -> magnétique (ordre de grandeur)

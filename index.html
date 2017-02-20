@@ -7,7 +7,8 @@
 		<title>Defense</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+		<link rel="stylesheet" href="css/style.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/vs.css">
@@ -33,11 +34,16 @@
 					$\def\boltzmannConstant{k_\text{B}}$
 					$\def\SMcomposition{x}$
 					$\def\wallSeparation{H}$
+					$\def\diameter{\sigma}$
 					$\def\dip{\mu}$
 					$\def\permittivity{\varepsilon}$
 					$\def\nonAdditivity{\delta}$
-					$\def\unitLength{\sigma}$
+					$\def\unitLength{\diameter}$
 					$\def\unitEnergy{\epsilon}$
+
+					$\def\dynamicViscosity{\eta}$
+					$\def\frictionCoefficient{\gamma}$
+					$\def\randomForce{R}$
 				</section>
 
 				<section data-transition="fade-in">
@@ -99,23 +105,18 @@
 					</section>
 
 					<section>
-						<h4>Contexte et Motivation</h4>
+						<h4>Contexte, Motivation, Modèle</h4>
 						<p>Travaux antérieux : PINBI : inversion de population </p>
 						<ul>
-							<li>Approfondir la situation à l'équilibre</li>
-							<li>
+							<li><p>
+								Approfondir la situation à l'équilibre
+								deux murs : sans interface phase volumique
+							</p></li>
+							<li><p>
 								Qu'en est-il de la dynamique ?
-								Nouveauté : dynamique pour applications
-							</li>
-						</ul>
-					</section>
-
-					<section>
-						<h4>Modèle</h4>
-
-						<ul>
-							<li>deux murs : sans interface phase volumique</li>
-							<li>géométrie plus réaliste : avec interface slab/bulk</li>
+								Nouveauté : dynamique pour applications,
+								géométrie plus réaliste : avec interface slab/bulk
+							</p></li>
 						</ul>
 						<strong>HS+dip non add</strong> : ingrédient essentiel.
 						Mais trop spécifique ?
@@ -212,14 +213,43 @@
 					<section>
 						<h4>Dynamique moléculaire</h4>
 						<p>Verlet vitesse :</p>
-						$$\vec{x}(t+\Delta t) = \vec{x}(t) + \Delta t \ddrt{x(t)}{t} +
+						<!-- $$\vec{x}(t+\Delta t) = \vec{x}(t) + \Delta t \ddrt{x(t)}{t} +
             				\frac{\Delta t^2}{2} \ddrt[2]{x(t)}{t}$$
 						$$\vec{v}(t + \Delta t) = \vec{v}(t) + \frac{\Delta t}{2m}
-            				\left( \vec{F}(t) + \vec{F}(t + \Delta t) \right)$$
+            				\left( \vec{F}(t) + \vec{F}(t + \Delta t) \right)$$ -->
+						<table>
+							<td>
+								<img data-src="media/methods/vv_scheme.svg">
+							</td>
+							<td>
+								<ul>
+									<li>Ensemble microcanonique : énergie fixée</li>
+									<li>Méthode d'intégration : bon compromis</li>
+									<li>Mais pour simuler l'ensemble canonique (thermostat) ?</li>
+								</ul>
+							</td>
+						</table>
 					</section>
 
 					<section>
 						<h4>Dynamique de Langevin</h4>
+						\[
+							m \ddrt{\vec{v}(t)}{t} = -\frictionCoefficient \vec{v}(t) + 
+								\vec{\randomForce}(t) + \vec{F}_\text{ext}
+						\]
+						<ul>
+							Un théorème de fluctuation-dissipation relie :
+							<li>
+								$\frictionCoefficient$ : le coefficient de frottement (macroscopique)
+							</li>
+							<li>
+								$\vec{\randomForce}$ : la force aléatoire (microscopique)
+							</li>
+						</ul>
+						<p>
+							Loi de Stokes pour une sphère de diamètre $\diameter$ :
+							$\frictionCoefficient = 3\pi \dynamicViscosity \diameter$.
+						</p>
 					</section>
 					
 					<section>
@@ -336,19 +366,163 @@
 					</section>
 
 					<section>
-						<h4>Modèle</h4>
+						<h4>Modèle : Géométrie de confinement</h4>
+
+						<img data-src="media/results/pinbi_dynamics/geometry.svg">
+						<p>Interfaces entre le réservoir de particules et le milieu confiné.</p>
+					</section>
+
+					<section>
+						<h4>Modèle : Potentiel d'interaction à courte portée</h4>
+
+						<table>
+							<td>
+								<img data-src="media/results/pinbi_dynamics/potential.svg">
+							</td>
+							<td>
+								<ul>
+									<li>MD : HS (créneau) &rarr; WCA (différentiable)</li>
+									<li>Mélange monodisperse en taille (noir)</li>
+									<li>
+										2 non-additivités :
+										<span style="color: blue">$\delta = 0.016$</span> et
+										<span style="color: green">$\delta = 0.2$</span>
+									</li>
+								</ul>
+							</td>
+						</table>
+
+						<!-- Rappel de l'interaction dipolaire ? --> 
+					</section>
+
+					<section>
+						<h4>Modèle : champ extérieur</h4>
+
+						<table>
+							<tr>
+								<td>
+									<img data-src="media/results/pinbi_dynamics/field.svg">
+								</td>
+								<td>
+									<ul>
+										<li>
+											Champ non-uniforme pour attirer les dipôles dans
+											le milieu confiné
+										</li>
+										<li>
+											Produit par les <span style="color: blue">plaques</span> conductrices
+										</li>
+									</ul>
+								</td>
+							</tr>
+						</table>
 					</section>
 
 					<section>
 						<h4>Méthodes de simulation</h4>
+						<!-- Paramètres ?-->
+						<ul>
+							<li>MC : plmc</li>
+							<li>DM : Espresso</li>
+						</ul>
+						+ modifications
 					</section>
 
 					<section>
 						<h4>Comparaison Monte-Carlo - dynamique moléculaire</h4>
+						<table>
+							<td>
+								<img data-src="media/results/pinbi_dynamics/mc_vs_md_q0_ds.svg">
+								champ nul, SD
+							</td>
+							<td>
+								<img data-src="media/results/pinbi_dynamics/mc_vs_md_q0_as.svg">
+								champ nul, SA
+							</td>
+							<td>
+								<img data-src="media/results/pinbi_dynamics/gamma0.046_nearlyAdd_q14_z.svg">
+								champ allumé, SD+SA
+							</td>
+						</table>
+						<!-- couleurs ? -->
+						<ul>
+							<li>Accord MC / MD, réversibilité du système</li>
+							<li>Champ appliqué : structuration des dipôles</li>
+						</ul>
+					</section>
+
+					<section data-transition="fade-in">
+						<h4>Système réversible</h4>
+
+						<img data-src="media/results/pinbi_dynamics/gamma0.046_nearlyAdd_q0_xz.png" class="xz_profile">
+					</section>
+
+					<section data-transition="fade-in">
+						<h4>Système réversible</h4>
+
+						<img data-src="media/results/pinbi_dynamics/gamma0.046_nearlyAdd_q0-14_xz.png" class="xz_profile">
+					</section >
+
+					<section data-transition="fade-in">
+						<h4>Système réversible</h4>
+
+						<img data-src="media/results/pinbi_dynamics/gamma0.046_nearlyAdd_q14-0_xz.png" class="xz_profile">
 					</section>
 
 					<section>
 						<h4>Dynamique de l'inversion de population sous champ</h4>
+						
+						<table>
+							<td>
+								<img data-src="media/results/pinbi_dynamics/gamma0.46_nearly+nonAdd_q0-14-0.svg">
+							</td>
+							<td>
+								<ul>
+									<li>Faible facteur d'amortissement $\frictionCoefficient^\ast = 0,46$</li>
+									<li>
+										<span style="color: red">$\delta = 0.016$</span>, 
+										<span style="color: green">$\delta = 0.2$</span> :
+										réversibilité
+									</li>
+									<li>
+										$t_\uparrow \sim 0,5 \mathrm{s}$: diffusion forcée,
+										$t_\downarrow \sim 1 \mathrm{s}$
+									</li>
+									<li>Saturation du nombre de dipôles : petit réservoir</li>
+								</ul>
+							</td>
+						</table>
+					</section>
+
+					<section>
+						<h4>Animation du remplissage et du vidage</h4>
+
+						<img data-src="media/results/pinbi_dynamics/filling.gif" class="animation">
+						<img data-src="media/results/pinbi_dynamics/emptying.gif" class="animation">
+					</section>
+
+					<section>
+						<h4>Loi d'échelle en fonction de $\frictionCoefficient$</h4>
+						<table>
+							<td>
+								<img data-src="media/results/pinbi_dynamics/md_q0-14-0_nearlyAdd_gammas_fit.svg">
+							</td>
+							<td>
+								<img data-src="media/results/pinbi_dynamics/md_sigma0-4_7_14-0_nearlyAdd_gamma0.46.svg">
+							</td>
+						</table>
+						<ul>
+							<li>
+								Linéarité : $t_\uparrow + t_\downarrow \propto \frictionCoefficient^\ast$
+							</li>
+							<li>
+								Extrapolation : pour $\frictionCoefficient^\ast = 460$,
+								$t_\uparrow + t_\downarrow = 1500 \mathrm{s}$
+							</li>
+							<li>
+								Champs croissants : saturation prématurée
+							</li>
+						</ul>
 					</section>
 
 					<section>
