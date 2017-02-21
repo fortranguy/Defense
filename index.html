@@ -7,7 +7,7 @@
 		<title>Defense</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
 		<link rel="stylesheet" href="css/style.css">
 
 		<!-- Theme used for syntax highlighting of code -->
@@ -25,33 +25,51 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+
 				<section>
-					<!-- LaTeX Macros -->
-					$\newcommand{\ct}[1]{\mathsf{#1}}$
-					$\newcommand{\dif}[2][]{\mathrm{d}^{#1} #2}$
-					$\newcommand{\ddrt}[3][]{\frac{\dif[#1]{#2}}{\dif{#3}^{#1}}}$
+					<section>
+						<!-- LaTeX Macros -->
+						$\newcommand{\ct}[1]{\mathsf{#1}}$
+						$\newcommand{\dif}[2][]{\mathrm{d}^{#1} #2}$
+						$\newcommand{\ddrt}[3][]{\frac{\dif[#1]{#2}}{\dif{#3}^{#1}}}$
 
-					$\def\boltzmannConstant{k_\text{B}}$
-					$\def\SMcomposition{x}$
-					$\def\wallSeparation{H}$
-					$\def\diameter{\sigma}$
-					$\def\dip{\mu}$
-					$\def\permittivity{\varepsilon}$
-					$\def\nonAdditivity{\delta}$
-					$\def\unitLength{\diameter}$
-					$\def\unitEnergy{\epsilon}$
+						$\def\boltzmannConstant{k_\text{B}}$
+						$\def\SMcomposition{x}$
+						$\def\wallSeparation{H}$
+						$\def\diameter{\sigma}$
+						$\def\dip{\mu}$
+						$\def\permittivity{\varepsilon}$
+						$\def\nonAdditivity{\delta}$
+						$\def\unitLength{\diameter}$
+						$\def\unitEnergy{\epsilon}$
 
-					$\def\dynamicViscosity{\eta}$
-					$\def\frictionCoefficient{\gamma}$
-					$\def\randomForce{R}$
-				</section>
+						$\def\dynamicViscosity{\eta}$
+						$\def\frictionCoefficient{\gamma}$
+						$\def\randomForce{R}$
+					</section>
 
-				<section data-transition="fade-in">
-					<h3>
-						Effet d'un champ électrique sur la structure et la dynamique de
-        				suspensions colloïdales confinées : étude numérique par simulation
-					</h3>
-					<p>S.C.</p>
+					<section data-transition="fade-in">
+						<h3>
+							Effet d'un champ électrique sur la structure et la dynamique de
+							suspensions colloïdales confinées : étude numérique par simulation
+						</h3>
+						<p>Salomon Chung, PLMC (UPEC)</p>
+					</section>
+
+					<section>
+						<h3>Plan</h3>
+						<p>[à compléter]</p>
+						<ol>
+							<li>Introduction : définition, motivation et modèle</li>
+								<!-- PINBI -->
+							<li>Propriétés d'équilibre en faible confinement</li>
+								<!-- minor, digression -->
+							<li>Aspects dynamiques de l'inversion de population sous champ</li>
+								<!-- major, re-PINBI -->
+							<li>Conclusion et perspectives</li>
+						</ol>
+						<!-- 1-3, 5-6: 50% du temps -->
+					</section>
 				</section>
 
 				<section>
@@ -61,199 +79,208 @@
 
 					<section>
 						<h4>Suspensions colloïdales</h4>
+
+						<p>
+							Dispersion de macro particules dans un milieu porteur.
+							Taille : du nanomètre au micromètre.
+							Large gamme d'échelle de longueur et de temps
+						</p>
 						
 						<ul>
-							<li>Applications : biologie, alimentaire, nanotechnologie, etc</li>
-							<li>Flexibilité : modulation des interactions entre colloïdes
-									et des propriétés du milieu,
-									de la géométrie et du champ extérieur
+							<li class="fragment">Objets supramoléculaires &rarr; flexibilité :
+								modulation des interactions entre les particules
+								en jouant sur leur structure,
+								physico-chimie, le milieu porteur,
+								la géométrie et les champs extérieurs
 							</li>
-							<li>
-								Généricité : étude et élaboration de colloïdes de différentes
-								tailles (dizaine de nanomètres au micromètres)
-								&rarr; large gamme de temps de réponse.
+							<li class="fragment">
+								Applications très diverses : <!-- couleur ? -->
+								alimentaire, cosmétique, nanotechnologie, etc
+							</li>
+							<li class="fragment">
+								Etudes théoriques et expérimentales innombrables
+								<!-- nous : un aspect -->
 							</li>
 						</ul>
 					</section>
 
 					<section>
+						<h4>Cadre</h4>
+
+						<table>
+							<ul>
+								<li>
+									Cette étude entre dans le cadre des travaux antérieurs de l'équipe
+									simulation / modélisation : phys stat, liq
+									tente de dégader params pertin., tendances généraux :
+									guide pour l'expérience,
+									notamment : généricité vs. spécificité
+									(lors du passage : théorie -> application)
+								</li>
+								<li>
+									1 axe particulier : colloïdes + champ ext.: moyen de contrôler
+									de manière réversible le milieu.
+									Point spécifique : dans un mélange : inversion de population
+									sous champ (déjà une thèse dans le labo.)
+								</li>
+								<li>
+									Suffisamment important pour être poursuivi
+									<!-- cette thèse / E. Trizac : rapporteur -->
+								</li>
+							</ul>
+						</table>
+
+						<p></p>
 						<h4>Situation physique</h4>
-						PINBI : un mélange binaire instable confiné et dans lequel une
-						des espèces est dipolaire (couplage)
-						<ul>
-							<li>
-								confinement : existe dans la réalité, comportement sans équivalent
-								en phase volumique (structuration, mouillage, désorption) 
-							</li>
-							<li>
-								champ électrique : manipulation de l'état du système, moyen
-								souple
-							</li>
-						</ul>
-					</section>
 
-					<section>						
-						<h4>Modèle</h4>
-
-						<p>SA, SD : sphères apolaires et dipolaires</p>
-						<p>mélange binaire : une espèce dipolaire et l'autre non,
-							tout : interaction à courte portée : simplification : uniquement répulsive</p>
 						<p>
-							mélange HS + dip : à diamètre non-additif
-							(MD : assouplissement du potentiel à courte portée : WCA)
+							Manipulation par un champ extérieur de la composition d'un mélange binaire
+							confiné.
 						</p>
-					</section>
-
-					<section>
-						<h4>Contexte, Motivation, Modèle</h4>
-						<p>Travaux antérieux : PINBI : inversion de population </p>
-						<ul>
-							<li><p>
-								Approfondir la situation à l'équilibre
-								deux murs : sans interface phase volumique
-							</p></li>
-							<li><p>
-								Qu'en est-il de la dynamique ?
-								Nouveauté : dynamique pour applications,
-								géométrie plus réaliste : avec interface slab/bulk
-							</p></li>
-						</ul>
-						<strong>HS+dip non add</strong> : ingrédient essentiel.
-						Mais trop spécifique ?
-					</section>
-
-					<section>
-						<h4>Schéma</h4>
-						cf. S.A.
-						e.g.
-						<ul>
-							<li>coquille vide &rarr; pas de moment dipolaire</li>
-							<li>l'autre : pleine, $\dip$ permanant ou induit</li>
-							<li>
-								stabilisation stérique : chaînes de polymère : si nature différente :
-								non-additif : la règle
-							</li>
-						</ul>
-						Si atomique : ésotérique ?
-
-						(Le système le plus proche : saccana)
-						Facilement réalisable pour les colloïdes.
-						<!-- Mettre les figures -->
-						e.g. ferrocolloïdes : fig. 9 séparation de phase induite par champ
-						nous : champ localisé
-						principe des filtres colloïdaux (cf. réf. S.A.)
-						<!-- Qu'est-ce qu'un filtre colloïdal ? -->
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h3>Méthodes de simulation</h3>
-					</section>
-
-					<section>
-						<h4>Introduction </h4>
-						<ul>
-							<li>
-								Objectif : étude d'un système comportant un grand nombre
-								de particules en interactions
-							</li>
-							<li>Fondement théorique : mécanique statistique</li>
-							<li>Mise en &oelig;uvre : simulations numériques</li>
-						</ul>
-					</section>
-
-					<section>
-						<h4>Méthodes de simulation</h4>
-						<ol>
-							<li>Modélisation et calcul des interactions</li>
-							<li>Evolution à partir d'un état initial</li>
-							<li>Reproductibilité des résultats</li>
-						</ol>
-					</section>
-
-					<section>
-						<h4>Monte-Carlo Metropolis</h4>
-						<p>Echantillionnage préférentiel</p>
-						<ul>
-							<li>
-								$p(x)$ densité de probabilité de la configuration $x$ :								
-								$$\langle a \rangle_p = \int \dif{x}\ p(x) a(x)$$
-							</li>
-							<li>
-								$x_1, ..., x_\ct{M}$ configurations pondérés 
-								et $\ct{M} \to \infty$ :
-								$$\frac{1}{\ct{M}} \sum_{\ct{i}=1}^\ct{M}
-									a(x_\ct{i}) \longrightarrow \langle a \rangle_p$$
-							</li>
-						</ul>
-					</section>
-
-					<section>
-						<h4>Monte-Carlo Metropolis</h4>
-						<p>Algorithm de Metropolis</p>
-						<p>$A[x \to y]$ probabilité d'acceptation :</p>
-						<pre>
-							<code data-trim>
-									if (acceptation_probability < 1.) then
-										call random_number(rand)
-										if (rand < acceptation_probability) then
-											success = .true.
-										else
-											success = .false.
-										end if
-									else
-										success = .true.
-									end if
-							</code>
-						</pre>
-						<!-- Schéma plutôt qu'algorithme ? -->
-					</section>
-
-					<section>
-						<h4>Dynamique moléculaire</h4>
-						<p>Verlet vitesse :</p>
-						<!-- $$\vec{x}(t+\Delta t) = \vec{x}(t) + \Delta t \ddrt{x(t)}{t} +
-            				\frac{\Delta t^2}{2} \ddrt[2]{x(t)}{t}$$
-						$$\vec{v}(t + \Delta t) = \vec{v}(t) + \frac{\Delta t}{2m}
-            				\left( \vec{F}(t) + \vec{F}(t + \Delta t) \right)$$ -->
 						<table>
 							<td>
-								<img data-src="media/methods/vv_scheme.svg">
+								<img data-src="media/introduction/model.png" width="50%">
 							</td>
-							<td>
-								<ul>
-									<li>Ensemble microcanonique : énergie fixée</li>
-									<li>Méthode d'intégration : bon compromis</li>
-									<li>Mais pour simuler l'ensemble canonique (thermostat) ?</li>
-								</ul>
-							</td>
+						<td>
+							<ul>
+								<li>
+									mélange : plus riche qu'un monocomposant
+									(sélectivité, situations intermédiaires)
+								</li>
+								<li>confinement : plus riche qu'en phase volumique</li>
+									<!-- PINBI : comme séparation de phase -->
+								<li>champ extérieur : contrôle réversible et "non intrusif"</li>
+							</ul>
+						</td>
 						</table>
 					</section>
 
-					<section>
-						<h4>Dynamique de Langevin</h4>
-						\[
-							m \ddrt{\vec{v}(t)}{t} = -\frictionCoefficient \vec{v}(t) + 
-								\vec{\randomForce}(t) + \vec{F}_\text{ext}
-						\]
+					<section>						
+						<h4>Modèle physique</h4>
+
 						<ul>
-							Un théorème de fluctuation-dissipation relie :
 							<li>
-								$\frictionCoefficient$ : le coefficient de frottement (macroscopique)
+								Mélange binaire à diamètres non-additifs :
+								sphères dipolaires (SD) et apolaires (SA),
+								dont les interactions à courte portée sont purement répulsives
+								(simplification).
+								Correspond aux colloïdes stabilisés stériquement
+								ou avec une très courte longueur d'écrantage.								
+								<!-- déclinaison la plus simple -->
+								<!-- $\delta$ -> mélange instable -->
+							</li>
+							<img data-src="media/introduction/interaction_contact.svg">
+							<img data-src="media/results/pinbi_dynamics/potential.svg" width=20%>
+							<p>
+								La non-additivité favorise la démixtion.
+								Pour la DM : assouplissement de l'interaction dure &rarr; 
+								potentiel WCA.
+							</p>
+								<!-- fade in -->
+							<li>
+								Géométrie de confinement :
+								pore fente (deux murs parallèles sans structure) ou 
+								pore de taille finie avec interface explicite avec la phase
+								volumique (dynamique).
 							</li>
 							<li>
-								$\vec{\randomForce}$ : la force aléatoire (microscopique)
+								Champ extérieur : soit un champ uniforme normal ou parallèle aux
+								parois (pore-fente),
+								soit un champ normal localisé (DM pore interface explicite).
 							</li>
 						</ul>
-						<p>
-							Loi de Stokes pour une sphère de diamètre $\diameter$ :
-							$\frictionCoefficient = 3\pi \dynamicViscosity \diameter$.
+						<!--
+							Etude : comme si champ électrique / certains aspects spécifiques
+							aux champs électriques. Mais mécanismes physiques / généraux->
+							peut être magnétique, e.g. ferrocolloïdes.
+						-->
+					</section>
+
+					<section>
+						<h4>But</h4>
+						<!-- Pourquoi faire -->
+						<!-- 2 directions principales-->
+						<ol>
+							<li><p>
+								Approfondir l'étude des propriétés d'équilibre
+								du fluide confiné dans un pore-fente.
+								Généralisation, éclairage supplémentaire
+								<!-- moins de confinement, dip plus -->
+							</p></li>
+							<li><p>
+								Nouveauté : étude de la dynamique pour des applications avec une
+								géométrie plus réaliste (interface slab/bulk).
+								Transition entre 2 états d'équilibre, temps caractéristique, etc.
+							</p></li>
+						</ol>
+						<!-- Avant de présenter nos résultats, précisons le modèle physique -->
+						<strong>HS+dip (non add)</strong> et <strong>champ extérieur</strong> :
+						ingrédients essentiels.
+						
+						<p>Ce modèle pourrait sembler particulier :</p>
+						<ul>
+							<li>à l'échelle moléculaire : probablement</li>
+							<li>à l'échelle supramoléculaire : moins évident</li>
+						</ul>
+					</section>
+
+					<section>
+						<!-- <h4>Schéma de principe</h4> -->
+						<h4>Champ et dipôles électriques</h4>
+
+						<ul>
+							<li>
+								contraste $\dip$ : particules polarisables et l'autre moins
+								(contraste diélectrique, index match particule - solvant)
+							</li>
+							<li>
+								stabilisation stérique : non-additivité probablement faisable :
+								interpénétration des polymères
+							</li>
+						</ul>
+						<img data-src="media/introduction/non_add.png">
+						<img data-src="media/introduction/marr_confined_beads.png" width=25%>
+					</section>
+
+					<section>
+
+						<h4>Champ et dipôles magnétiques</h4>
+
+						<img data-src="media/introduction/sacanna_title.png">
+						<img data-src="media/introduction/less_dip.png" width=20%>
+						<img data-src="media/introduction/sacanna_separation.jpg" width=25%>
+						<!-- proche de notre système -->
+						<p> Pour les systèmes magnétiques
+							(plus fréquemment étudiés dans la littérature) :
+							Facilement réalisables pour les colloïdes.
+							e.g. ferrocolloïdes : fig. 9 séparation de phase induite par champ
+							principe des filtres optiques
+							<!-- géométrie : faisable -->
 						</p>
 					</section>
-					
+
 					<section>
-						<h4>Sommes d'Ewald</h4>
+						<h4>Elaboration d'un pore</h4>
+						<p>(insérer : image)</p>
+					</section>
+
+					<!-- Ce n'est pas de la science fiction ! -->
+					<!-- On y revient dans la partie dynamique-->
+
+					<section>
+						<h4>Méthodes de simulation</h4>
+
+						<ul>
+							<li>Complexité du modèle : pas de méthodes analytiques</li>
+							<li>Système à l'équilibre : Monte-Carlo</li>
+								<!--
+									Q : est-ce suffisant (échantillonnage) ? 
+									méthodes standards
+									résultats qui semblaient qualitativement cohérent
+								-->
+							<li>Système hors équilibre : dynamique moléculaire + Langevin</li>
+							<li>Interactions dipolaires : sommes d'Ewald + correction pour un pore</li>
+						</ul>
 					</section>
 				</section>
 
@@ -268,17 +295,20 @@
 					<section>
 						<h4>Modèle</h4>
 						<p>Géométrie, composition et interaction à courte portée</p>
+						
+						<p>Fluide dans un pore fente infini (CLP)</p>
+						<p></p>
 						<table>
 							<td>
-								<img data-src="media/results/field_mixture/geometry.svg">
+								<img data-src="media/introduction/equi_pore_reser.jpg">
+								<!--
+									zoom: une partie d'un système <<grand>>
+										TVN : pas forcément pore fermé
+									pas une inclusion, e.g. slab dans un grand slab
+								-->
 							</td>
 							<td>
 								<ul>
-									<li>
-										Faible confinement :
-										$\wallSeparation = 20 \unitLength$
-									</li>
-									<li>Mélange équimolaire : $\SMcomposition = 0,5$</li>
 									<li>
 										Interactions dures :
 										$u(r) / \boltzmannConstant T = \infty [r \leq \sigma]$
@@ -287,6 +317,11 @@
 										Non-additivité :
 										$\sigma_\text{SD-SA} = (1 + \nonAdditivity) \sigma$
 									</li>
+									<li>
+										Faible confinement :
+										$\wallSeparation = 20 \unitLength$
+									</li>
+									<li>Mélange équimolaire : $\SMcomposition = 0,5$</li>
 								</ul>
 							</td>
 						</table>
@@ -296,7 +331,7 @@
 						<h4>Première étape : MolPhys</h4>
 						Modèle
 						Formule
-						Méthodes : MC (code homemade)
+						Méthodes : MC (code homemade), TVN, pore infini
 						Variables de contrôles
 						Sélection des principaux résultats
 					</section>
@@ -422,7 +457,7 @@
 						<h4>Méthodes de simulation</h4>
 						<!-- Paramètres ?-->
 						<ul>
-							<li>MC : plmc</li>
+							<li>MC : homemade</li>
 							<li>DM : Espresso</li>
 						</ul>
 						+ modifications
@@ -532,11 +567,120 @@
 					<section>
 						<h4>Rôle de la taille des particules et loi d'échelle</h4>
 					</section>
+			
+				</section>
+
+				<section>
+					<section>
+						<h4>Introduction </h4>
+						<ul>
+							<li>
+								Objectif : étude d'un système comportant un grand nombre
+								de particules en interactions
+							</li>
+							<li>Fondement théorique : mécanique statistique</li>
+							<li>Mise en &oelig;uvre : simulations numériques</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>Méthodes de simulation</h4>
+						<ol>
+							<li>Modélisation et calcul des interactions</li>
+							<li>Evolution à partir d'un état initial</li>
+							<li>Reproductibilité des résultats</li>
+						</ol>
+					</section>
+
+					<section>
+						<h4>Monte-Carlo Metropolis</h4>
+						<p>Echantillionnage préférentiel</p>
+						<ul>
+							<li>
+								$p(x)$ densité de probabilité de la configuration $x$ :								
+								$$\langle a \rangle_p = \int \dif{x}\ p(x) a(x)$$
+							</li>
+							<li>
+								$x_1, ..., x_\ct{M}$ configurations pondérés 
+								et $\ct{M} \to \infty$ :
+								$$\frac{1}{\ct{M}} \sum_{\ct{i}=1}^\ct{M}
+									a(x_\ct{i}) \longrightarrow \langle a \rangle_p$$
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h4>Monte-Carlo Metropolis</h4>
+						<p>Algorithm de Metropolis</p>
+						<p>$A[x \to y]$ probabilité d'acceptation :</p>
+						<pre>
+							<code data-trim>
+									if (acceptation_probability < 1.) then
+										call random_number(rand)
+										if (rand < acceptation_probability) then
+											success = .true.
+										else
+											success = .false.
+										end if
+									else
+										success = .true.
+									end if
+							</code>
+						</pre>
+						<!-- Schéma plutôt qu'algorithme ? -->
+					</section>
+
+					<section>
+						<h4>Dynamique moléculaire</h4>
+						<p>Verlet vitesse :</p>
+						<!-- $$\vec{x}(t+\Delta t) = \vec{x}(t) + \Delta t \ddrt{x(t)}{t} +
+            				\frac{\Delta t^2}{2} \ddrt[2]{x(t)}{t}$$
+						$$\vec{v}(t + \Delta t) = \vec{v}(t) + \frac{\Delta t}{2m}
+            				\left( \vec{F}(t) + \vec{F}(t + \Delta t) \right)$$ -->
+						<table>
+							<td>
+								<img data-src="media/methods/vv_scheme.svg">
+							</td>
+							<td>
+								<ul>
+									<li>Ensemble microcanonique : énergie fixée</li>
+									<li>Méthode d'intégration : bon compromis</li>
+									<li>Mais pour simuler l'ensemble canonique (thermostat) ?</li>
+								</ul>
+							</td>
+						</table>
+					</section>
+
+					<section>
+						<h4>Dynamique de Langevin</h4>
+						\[
+							m \ddrt{\vec{v}(t)}{t} = -\frictionCoefficient \vec{v}(t) + 
+								\vec{\randomForce}(t) + \vec{F}_\text{ext}
+						\]
+						<ul>
+							Un théorème de fluctuation-dissipation relie :
+							<li>
+								$\frictionCoefficient$ : le coefficient de frottement (macroscopique)
+							</li>
+							<li>
+								$\vec{\randomForce}$ : la force aléatoire (microscopique)
+							</li>
+						</ul>
+						<p>
+							Loi de Stokes pour une sphère de diamètre $\diameter$ :
+							$\frictionCoefficient = 3\pi \dynamicViscosity \diameter$.
+						</p>
+					</section>
+					
+					<section>
+						<h4>Sommes d'Ewald</h4>
+					</section>
 				</section>
 
 				<section>
 					<h3>Conclusion</h3>
 				</section>
+				
 			</div>
 		</div>
 

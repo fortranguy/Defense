@@ -3,3 +3,4 @@
 - [tension] : deux parties principalement : équilibre puis dynamique
 - courbes : (e.g. profils de densité) : revoir les légendes, la charte de couleur
 - conversion : électrique -> magnétique (ordre de grandeur)
+- Licence / Copyright issues?
