@@ -35,13 +35,18 @@
 
 						$\def\boltzmannConstant{k_\text{B}}$
 						$\def\SMcomposition{x}$
+						$\def\SMdensity{\rho}$
 						$\def\wallSeparation{H}$
+						$\def\wallLength{L}$
 						$\def\diameter{\sigma}$
+						$\def\field{E}$
 						$\def\dip{\mu}$
 						$\def\permittivity{\varepsilon}$
 						$\def\nonAdditivity{\delta}$
 						$\def\unitLength{\diameter}$
 						$\def\unitEnergy{\epsilon}$
+						$\def\as{SA}$
+						$\def\ds{SD}$
 
 						$\def\dynamicViscosity{\eta}$
 						$\def\frictionCoefficient{\gamma}$
@@ -58,7 +63,6 @@
 
 					<section>
 						<h3>Plan</h3>
-						<p>[à compléter]</p>
 						<ol>
 							<li>Introduction : définition, motivation et modèle</li>
 								<!-- PINBI -->
@@ -79,13 +83,17 @@
 
 					<section>
 						<h4>Suspensions colloïdales</h4>
-
-						<p>
-							Dispersion de macro particules dans un milieu porteur.
-							Taille : du nanomètre au micromètre.
-							Large gamme d'échelle de longueur et de temps
-						</p>
 						
+						<div class="fragment">
+							<p>Définition</p>
+							<ul>
+								<li>Dispersion de macro particules dans un milieu porteur.</li>
+								<li>Taille : du nanomètre au micromètre.</li>
+								<li>Large gamme d'échelle de longueur et de temps</li>
+							</ul>
+						</div>
+						
+						<p class="fragment">Propriétés</p>
 						<ul>
 							<li class="fragment">Objets supramoléculaires &rarr; flexibilité :
 								modulation des interactions entre les particules
@@ -110,27 +118,29 @@
 						<table>
 							<ul>
 								<li>
-									Cette étude entre dans le cadre des travaux antérieurs de l'équipe
-									simulation / modélisation : phys stat, liq
-									tente de dégader params pertin., tendances généraux :
-									guide pour l'expérience,
-									notamment : généricité vs. spécificité
-									(lors du passage : théorie -> application)
+									A partir des travaux antérieurs de l'équipe
+									(simulation, modélisation, physique statistique, 
+									physique des liquides) :
+									tenter de dégager les paramètres pertinents et
+									les tendances généraux &rarr;
+									guide pour l'expérience
+									(généricité vs. spécificité, théorie &rarr; application)
 								</li>
 								<li>
-									1 axe particulier : colloïdes + champ ext.: moyen de contrôler
+									1 axe particulier : colloïdes + champ extérieur, pour contrôler
 									de manière réversible le milieu.
-									Point spécifique : dans un mélange : inversion de population
-									sous champ (déjà une thèse dans le labo.)
 								</li>
 								<li>
-									Suffisamment important pour être poursuivi
+									Dans un mélange, possibilité d'inversion de population
+									sous champ (C. Brunet, 2009, PLMC) :
+									suffisamment important pour être poursuivi.
 									<!-- cette thèse / E. Trizac : rapporteur -->
 								</li>
 							</ul>
 						</table>
 
 						<p></p>
+						<div class="fragment">
 						<h4>Situation physique</h4>
 
 						<p>
@@ -142,7 +152,7 @@
 								<img data-src="media/introduction/model.png" width="50%">
 							</td>
 						<td>
-							<ul>
+							<ul class="fragment">
 								<li>
 									mélange : plus riche qu'un monocomposant
 									(sélectivité, situations intermédiaires)
@@ -153,6 +163,7 @@
 							</ul>
 						</td>
 						</table>
+						</div>
 					</section>
 
 					<section>						
@@ -293,21 +304,47 @@
 					</section>
 
 					<section>
+						<h4>Plan</h4>
+
+						<ol>
+							<li>Modèle</li>
+							<li>Equilibre de phase</li>
+							<li>Champ nul</li>
+							<li>Champ perpendiculaire</li>
+						</ol>
+					</section>
+
+					<section>
 						<h4>Modèle</h4>
-						<p>Géométrie, composition et interaction à courte portée</p>
-						
-						<p>Fluide dans un pore fente infini (CLP)</p>
-						<p></p>
+						<p>Géométrie : Fluide dans un pore fente infini (CLP selon $x, y$)</p>
+						<!-- aussi selon $z$ : correction électrostatique -->
 						<table>
 							<td>
-								<img data-src="media/introduction/equi_pore_reser.jpg">
+								<img data-src="media/introduction/equi_pore_reser.jpg" width=100%>
 								<!--
-									zoom: une partie d'un système <<grand>>
+									zoom: une partie d'un système <<grand>>, loin des bords
 										TVN : pas forcément pore fermé
 									pas une inclusion, e.g. slab dans un grand slab
 								-->
 							</td>
 							<td>
+								<ul>
+									<li>
+										Faible confinement :
+										$\wallSeparation = 20 \unitLength$ /
+										$\wallLength = 20 \unitLength$ [à vérifier]
+									</li>
+									<li>Mélange équimolaire : $\SMcomposition = 0,5$ /
+										Densité :
+											$\SMdensity_\ct{i} = \frac{\ct{N}_\ct{i} \unitLength^3}
+											{(\wallSeparation - \unitLength) \wallLength^2}$.
+									</li>
+								</ul>
+							</td>
+						</table>
+						<table>
+							<td>
+								<p>Interaction à courte portée</p>
 								<ul>
 									<li>
 										Interactions dures :
@@ -317,42 +354,32 @@
 										Non-additivité :
 										$\sigma_\text{SD-SA} = (1 + \nonAdditivity) \sigma$
 									</li>
-									<li>
-										Faible confinement :
-										$\wallSeparation = 20 \unitLength$
-									</li>
-									<li>Mélange équimolaire : $\SMcomposition = 0,5$</li>
 								</ul>
 							</td>
+
+							<td>
+								<p>Interactions dipolaires et champ extérieur</p>
+								<ul>
+									<li>
+										$u(\vec{r}_\ct{ij}, \vec{\dip}_\ct{i}, \vec{\dip}_\ct{j}) =
+										\frac{1}{4 \pi \permittivity}
+										\left[
+											\frac{\vec{\dip}_\ct{i} \cdot \vec{\dip}_\ct{j}}{r_\ct{ij}^3} -
+											3 \frac{(\vec{\dip}_\ct{i} \cdot \vec{r}_\ct{ij})
+												(\vec{r}_\ct{ij} \cdot \vec{\dip}_\ct{j})}{r_\ct{ij}^5}
+										\right]$
+									</li>
+									<li>
+										Champ : nul, perpendiculaire ou parallèle
+									</li>
+									<li>$\dip^\ast$, $\field^\ast$ [à compléter]</li>
+								</ul>	
+							</td>
 						</table>
-					</section>
 
-					<section>
-						<h4>Première étape : MolPhys</h4>
-						Modèle
-						Formule
-						Méthodes : MC (code homemade), TVN, pore infini
-						Variables de contrôles
-						Sélection des principaux résultats
-					</section>
-
-					<section>
-						<h4>Modèle</h4>
-						<p>Interactions dipolaires et champ extérieur</p>
-						<ul>
-							<li>
-								$u(\vec{r}_\ct{ij}, \vec{\dip}_\ct{i}, \vec{\dip}_\ct{j}) =
-								\frac{1}{4 \pi \permittivity}
-								\left[
-									\frac{\vec{\dip}_\ct{i} \cdot \vec{\dip}_\ct{j}}{r_\ct{ij}^3} -
-									3 \frac{(\vec{\dip}_\ct{i} \cdot \vec{r}_\ct{ij})
-										(\vec{r}_\ct{ij} \cdot \vec{\dip}_\ct{j})}{r_\ct{ij}^5}
-								\right]$
-							</li>
-							<li>
-								Champ : nul, perpendiculaire ou parallèle
-							</li>
-						</ul>
+						<p>Etude par simulation Monte-Carlo (canonique et GEMC)</p>
+						<!-- homemade : code existant + Ewald optimisé à la Maggs -->
+						($\ct{N}_\text{\ds} = 1330 \text{ à } 4786$)
 					</section>
 
 					<section>
@@ -372,23 +399,129 @@
 						<ul>
 							<li>La non-additivité favorise la démixtion.</li>
 							<li>Les murs stabilisent le mélange.</li>
+							<li>
+								Etats marqués par des croix :
+								étude de l'effet du champ à ces densités
+							</li>
 						</ul>
+						<!-- attention : définition de la densité -->
+						<!-- nombre de particule fixé, bord (extrémité du pore <<réel>>) négligé -->
 					</section>
 
 					<section>
 						<h4>Champ nul</h4>
+
+						<div>
+							<p>$\SMdensity = 0,35$ et $\SMdensity = 0,47$</p>
+							<img data-src="media/results/field_mixture/noFieldLowDensity_profile.svg" width=25%>
+							<img data-src="media/results/field_mixture/noFieldMedDensity_profile.svg" width=25%>
+							<!-- légende in figure ? -->
+							<p>"démouillage" des murs par les dipôles</p>
+						</div>
+
+						<div>
+							<p>$\SMdensity = 0,64$ : phases riche et pauvre en dipôles</p>
+							<img data-src="media/results/field_mixture/Figure6a.svg" width=25%>
+							<img data-src="media/results/field_mixture/Figure6b.svg" width=25%>
+							<ul>
+								<li>mouillage des murs par les dipôles dans la phase riche</li>
+								<li>2 phases presque pures</li>
+							</ul>
+						</div>
 					</section>
 
 					<section>
 						<h4>Champ perpendiculaire</h4>
+
+						<div>
+							<p>$\SMdensity = 0,64$, $\field^\ast = 0.18$ et $\field^\ast = 0.90$</p>
+							<img data-src="media/results/field_mixture/Figure9a.svg" width=25%>
+							<img data-src="media/results/field_mixture/Figure9b.svg" width=25%>
+							<!-- dans la figure ? -->
+							<div>
+								<ul>
+									<li>
+										stabilisation du mélange (courtes chaînes perpendiculaires)</li>
+									</li>
+									<li>
+										nette structuration en couches à champ fort
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- Mélange homogène ? pas aussi simple-->
+
+						<div class="fragment">
+							<img data-src="media/results/field_mixture/Figure10b.png" width=25%>
+							<!-- colonnes -->
+							<img data-src="media/results/field_mixture/highPerpField_highDensity_xyDensity_ds.png" width=20%>
+							<!-- couleur : cohérent : orange / bleu -->
+							<p>configuration représentative et densité 2D moyennée sur quelques milliers de pas </p>
+							<!-- nombre exacte ? -->
+							<!-- séparation de phases locale ? -->
+							<p>structures mésoscopiques bien définies : persistantes ?</p>
+							<!-- strucutre transitoire ? pas de symétrie -> métastable -->
+							<!-- taille de la boîte ? dév. ultérieur   ? -->
+						</div>
 					</section>
 
 					<section>
 						<h4>Champ parallèle</h4>
+
+						<div>
+							<p>$\SMdensity = 0.47$, $\field_\parallel = 0,18$</p>
+							<img data-src="media/results/field_mixture/Figure15a.svg" width=25%>
+							<img data-src="media/results/field_mixture/Figure15b.svg" width=25%>
+							<ul>
+								<li>Démixtion à cause des longues chaînes parallèles aux murs.</li>
+								<li>Les dipôles fuient les murs.</li>
+								<li>2 phases presque pures (simulation GEMC).</li>
+								<!-- 2 boîtes distinctes -->
+							</ul>
+						</div>
+
+						<div class="fragment">
+							<p>Et en canonique ?</p>
+							<table>
+								<td>
+									<img data-src="media/results/field_mixture/Figure16.svg" width=75%>
+								</td>
+								<td>
+									<ul>
+										<li>
+											2 phases dans la même boîte &rarr; densités de la GEMC !
+										</li>
+										<!-- on aurait pu penser : un mélange plus homogène -->
+										<!-- presque spatialement séparés -->
+										<!-- séparation de phase en canonique : énorme système -->
+										<!-- ici : grâce aux murs -->
+										<li>transitoire, instable ?</li>
+									</ul>
+								</td>
+							</table>
+						</div>
 					</section>
 
 					<section>
-						<h4>Synthèse</h4>
+						<h4>Conclusion</h4>
+
+						<ul>
+							<li>
+								Le confinement et le champ perpendiculaire stabilisent le mélange.
+							</li>
+							<li>
+								Le champ parallèle induit une séparation de phase.
+							</li>
+							<li>
+								Ces 2 champs induisent une structuration et/ou une ségrégation
+								au voisinnage de la surface.
+							</li>
+						</ul>
+
+						<p>
+							Dans la suite de l'étude, nous considérons uniquement des champs
+							perpendiculaires parce qu'ils peuvent conduire à des cycles réversibles.
+						</p>
 					</section>
 				</section>
 
