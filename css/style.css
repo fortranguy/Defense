@@ -3,5 +3,10 @@
 }
 
 .animation {
-    width: 45%;
+    width: 50%;
+}
+
+#table_alignement td {
+    text-align: center;
+    vertical-align: top;
 }
