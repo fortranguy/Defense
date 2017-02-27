@@ -45,6 +45,9 @@
 						$\def\nonAdditivity{\delta}$
 						$\def\unitLength{\diameter}$
 						$\def\unitEnergy{\epsilon}$
+						$\def\unitMass{m}$
+
+						$\def\unitTime{\tau_{\text{N}}}$
 						$\def\as{SA}$
 						$\def\ds{SD}$
 
@@ -55,6 +58,7 @@
 
 						$\def\CSsoftware{\textsf}$
 						$\def\espresso{\CSsoftware{ESPResSo}}$
+						$\def\secondVirial{B_2}$
 					</section>
 
 					<section data-transition="fade-in">
@@ -359,8 +363,8 @@
 						<div class="fragment">
 						<p>Géométrie : Fluide dans un pore fente infini (CLP selon $x, y$)</p>
 						<!-- aussi selon $z$ : correction électrostatique -->
-						<table width="100%">
-							<td width="40%" id="table_alignement">
+						<table width="100%" id="table_alignement">
+							<td width="40%">
 								<img data-src="media/introduction/equi_pore_reser.jpg">
 								<!--
 									zoom: une partie d'un système <<grand>>, loin des bords
@@ -554,7 +558,7 @@
 						<h4>Champ parallèle</h4>
 
 						<div class="fragment">
-							<p>$\SMdensity = 0.47$, $\field_\parallel = 0,18$</p>
+							<p>$\SMdensity = 0.47$, $\field_\parallel^\ast = 0,18$</p>
 							<table width="100%" id="table_alignement">
 								<td width="33%">
 									<img data-src="media/results/field_mixture/Figure15a.svg">
@@ -763,18 +767,24 @@
 							<!-- symboles / superposition ? -->
 						</table>
 						<!-- couleurs ? -->
-						<ul>
+						<ul class="fragment">
 							<li>
-								Population "normale" :
+								Population "<span class="attention">normale</span>" :
 								$\SMdensity_\mathrm{\ds}^\mathrm{slab} \simeq
-								\SMdensity_\mathrm{\ds}^\mathrm{bulk} <
+								\SMdensity_\mathrm{\ds}^\mathrm{bulk} \ll
 								\SMdensity_\mathrm{\as}^\mathrm{slab} \simeq
 								\SMdensity_\mathrm{\as}^\mathrm{bulk}$.
 							</li>
-							<li>Accord MC / MD : système à l'équilibre</li>
+							<li>Accord MC / MD : système monophasique à l'équilibre</li>
 							<!-- transitions entre états d'équilibre ? -->
+							<!--
+								profils de densité pour ces paramètres.
+								Population normale : slab/bulk et <<
+							-->
 						</ul>
 					</section>
+
+					<!-- Quand E \neq 0 -->
 
 					<section>
 						<h4>
@@ -783,46 +793,109 @@
 						<table width="100%" id="table_alignement" class="fragment">
 							<td width="50%">
 								<img data-src="media/results/pinbi_dynamics/gamma0.046_nearlyAdd_q14_z.svg">
-								<p>SD+SA</p>
+								<p>cercles vides : SD, cercles pleins : SA</p>
 							</td>
-							<td>
+							<td class="fragment">
 								<ul>
-									<li class="fragment">
-										La population est inversée par rapport au bulk.
+									<li>
+										La population est <span class="attention">inversée</span>
+										par rapport au bulk (dipôles majoritaires dans le pore).
 									</li>
-									<li class="fragment">
+									<li>
 										La densité des dipôles est importante :
-										structuration comme dans la partie précédente.
+										structuration en couches comme dans
+										l'étude précédente (fluide dans un pore fente).
 									</li>
 								</ul>
 							</td>
 						</table>
+
+						<!--  -->
 					</section>
 
 					<!-- 
+						[Transition]
 						Illustration visuelle
 						Nous illustrons la réversibilité du cycle du champ en montrant
 						les profils de densité des dipôles à la même échelle
 						dans la séquence réversibilité : "avant, après, retour".
+
+						Importance : cycle de champ est réversible.
+						Nous allons l'illustrer de manière visuelle.
 					-->
 
 					<!-- densité 2D , densité 1D -->
 					<section>
-						<h4>Système réversible</h4>
+						<h4>Cycle de champ réversible : </h4>
 
 						<div style="position:absolute" class="fragment current-visible">
-							<img data-src="media/results/pinbi_dynamics/gamma0.046_nearlyAdd_q0_xz.png" class="xz_profile">
+							<table width="100%" id="table_alignement">
+								<td class="xz_profile">
+									<img data-src="media/results/pinbi_dynamics/gamma0.046_nearlyAdd_q0_xz.png">
+								</td>
+								<td>
+									<img data-src="media/results/pinbi_dynamics/gamma0.046_rev_q0_z_ds.svg">
+									<p>profil de densité des dipôles</p>
+								</td>
+							</table>
 							<p>$\chargeDensity^\ast = 0$</p>
 						</div>
 						<div style="position:absolute" class="fragment current-visible">
-							<img data-src="media/results/pinbi_dynamics/gamma0.046_nearlyAdd_q0-14_xz.png" class="xz_profile">
-							<p>$\chargeDensity^\ast = 14,3$</p>
+							<table width="100%" id="table_alignement">
+								<td class="xz_profile">
+									<img data-src="media/results/pinbi_dynamics/gamma0.046_nearlyAdd_q0-14_xz.png">
+								</td>
+								<td>
+									<img data-src="media/results/pinbi_dynamics/gamma0.046_rev_q0-14_z_ds.svg">
+									<p>profil de densité des dipôles</p>
+								</td>
+							</table>
+							<p>$\chargeDensity^\ast = 0 \to 14,3$</p>
 						</div>
 						<div style="position:absolute" class="fragment current-visible">
-							<img data-src="media/results/pinbi_dynamics/gamma0.046_nearlyAdd_q14-0_xz.png" class="xz_profile">
-							<p>$\chargeDensity^\ast = 0$</p>
+							<table width="100%" id="table_alignement">
+								<td class="xz_profile">
+									<img data-src="media/results/pinbi_dynamics/gamma0.046_nearlyAdd_q14-0_xz.png">
+								</td>
+								<td>
+									<img data-src="media/results/pinbi_dynamics/gamma0.046_rev_q0-14-0_z_ds.svg">
+									<p>profil de densité des dipôles</p>
+								</td>
+							</table>
+							<p>$\chargeDensity^\ast = 0 \to 14,3 \to 0$</p>
 						</div>
+
+						<!--
+							Partons : E=0
+								droite : rho(z)
+								gauche : l'aspect visuel du système, vert : SA / bleu : SD,
+									SD : pratiquement invisible
+								ajouter : SA
+							E /= 0
+								dipôles au centre
+							E = 0
+								retour à la situation initiale
+						-->
 					</section>
+
+					<section>
+						<div style="position:absolute" class="fragment current-visible">
+							<img data-src="media/results/pinbi_dynamics/gamma0.046_nearlyAdd_q0_xz.png" width="65%">
+						</div>
+						<div style="position:absolute" class="fragment current-visible">
+							<img data-src="media/results/pinbi_dynamics/gamma0.046_nearlyAdd_q0-14_xz.png" width="65%">
+						</div>
+						<div style="position:absolute" class="fragment current-visible">
+							<img data-src="media/results/pinbi_dynamics/gamma0.046_nearlyAdd_q14-0_xz.png" width="65%">
+						</div>
+
+						<!--
+							2nd pass : sans commentaire
+							-> Q : temps caractéristique ?
+							zoomer : z in [-5:5]
+						-->
+					</section>
+
 
 					<!-- Et entre ? -->
 					<section>
@@ -834,32 +907,54 @@
 							</td>
 							<td>
 								<ul>
-									<li>Faible facteur d'amortissement $\frictionCoefficient^\ast = 0,46$</li>
+									<li>Faible coefficient de frottement $\frictionCoefficient^\ast = 0,46$</li>
 									<li>
 										<span style="color: red">$\delta = 0,016$</span>, 
 										<span style="color: green">$\delta = 0,2$</span> :
 										réversibilité
 									</li>
 									<li>
-										$t_\uparrow \sim 0,5 \mathrm{s}$: diffusion forcée,
-										$t_\downarrow \sim 1 \mathrm{s}$
+										temps de remplissage $t_\uparrow \sim 0,5 \mathrm{s}$: diffusion forcée,
+										temps de vidage $t_\downarrow \sim 1 \mathrm{s}$
 									</li>
 									<li>Saturation du nombre de dipôles : petit réservoir</li>
+									<!-- canonique -->
 								</ul>
 							</td>
 						</table>
+
+						<p class="fragment">
+							<span class="attention">Echelle de temps</span> :
+							$\unitTime = \unitLength \sqrt{\unitMass / \unitEnergy} =
+							2,55e-5 \mathrm{s}$ ?
+						</p>						
+
+						<!--
+							Inversion de population en dynamique :
+							faible gamme : temps raisonnement
+							...
+							après adimenstionnement :
+							en prenant : cette échelle "arbitrairement" sigma/m/epsilon.
+							Nous y reviendrons par la suite.
+
+							Q : quelle valeur de gamma ? bien plus grande pour les colloïdes
+							attention : temps de calcul
+						-->
 					</section>
 
+					<!--
 					<section>
 						<h4>Animation du remplissage et du vidage</h4>
 
 						<img data-src="media/results/pinbi_dynamics/filling.gif" class="animation">
 						<img data-src="media/results/pinbi_dynamics/emptying.gif" class="animation">
-						<!-- wider? -->
 					</section>
+					-->
 
 					<section>
-						<h4>Loi d'échelle en fonction de $\frictionCoefficient$ et champs croissants</h4>
+						<h4>
+							Loi d'échelle en fonction de $\frictionCoefficient^\ast$ et champs croissants
+						</h4>
 						<table width="100%" id="table_alignement">
 							<td width="50%" class="fragment">
 								<img data-src="media/results/pinbi_dynamics/md_q0-14-0_nearlyAdd_gammas_fit.svg">
@@ -878,27 +973,292 @@
 								<p>Champs croissants : saturation prématurée</p>
 							</td>
 						</table>
-						
+						<!--
+							gamma colloïdes : gamma = 460 (1 \micro\meter)
+							extrapolé
+							saturation
+
+							certains paramètres : rév.
+							et si on change de params. ? cycles irrév.
+						-->
 					</section>
 
 					<section>
 						<h4>Cycles irréversibles</h4>
+						
+						<p>$\frictionCoefficient^\ast = 0,046$ (pour accélérer les simulations)</p>
+						<table width="100%" id="table_alignement">
+							<td width="50%" class="fragment">
+								<p>
+									$\SMcomposition = 0,1$; $\SMdensity^\ast = 0,6$
+								</p>
+								<img data-src="media/results/pinbi_dynamics/gamma0.046_rho0.6_x0.1_nearlyVsNonAdd_q0-7-0.svg">								
+							</td>
+							<td class="fragment">
+								<ul>
+									<li>
+										<span style="color: red">$\delta = 0,016$</span> :
+										cycle réversible
+									</li>
+									<li>
+										<span style="color: green">$\delta = 0,2$</span> :
+										cycle <span class="attention">irréversible</span>
+									</li>
+									<li>
+										La combinaison $\SMcomposition = 0,1$;
+										$\SMdensity^\ast = 0,6$ et $\delta = 0,2$
+										correspond à un état diphasique.
+										<!--
+											état initiale : peu dipôles, métastable
+											(proche coexistence)
+											avec champ : sélection de la phase riche
+											le champ a été coupé
+										-->
+									</li>
+									<li>
+										Le champ <span class="attention">sélectionne</span>
+										la phase riche en dipôles.
+									</li>
+								</ul>
+							</td>
+						</table>
+
+						<!--
+							situation particulière (irréversible) :
+							illustration plus visuelle (le système ne revient pas à la situation
+							initiale après extinction du champ)
+							par les prochaines figures :
+						-->
+					</section>
+
+					<section>
 
 						<!-- Cycle du champ, profiles 2D, 1D -->
+						<div style="position:absolute" class="fragment current-visible">
+							<table width="100%" id="table_alignement">
+								<td class="xz_profile">
+									<img data-src="media/results/pinbi_dynamics/gamma0.046_nonAdd_q0_xz.png">
+								</td>
+								<td>
+									<img data-src="media/results/pinbi_dynamics/gamma0.046_irrev_q0_z_ds.svg">
+								</td>
+							</table>
+							<p>$\chargeDensity^\ast = 0$</p>
+						</div>
+						<div style="position:absolute" class="fragment current-visible">
+							<table width="100%" id="table_alignement">
+								<td class="xz_profile">
+									<img data-src="media/results/pinbi_dynamics/gamma0.046_nonAdd_q0-7_xz.png">
+								</td>
+								<td>
+									<img data-src="media/results/pinbi_dynamics/gamma0.046_irrev_q0-7_z_ds.svg">
+								</td>
+							</table>
+							<p>$\chargeDensity^\ast = 0 \to 7,15$</p>
+						</div>
+						<div style="position:absolute" class="fragment current-visible">
+							<table width="100%" id="table_alignement">
+								<td class="xz_profile">
+									<img data-src="media/results/pinbi_dynamics/gamma0.046_nonAdd_q7-0_xz.png">
+								</td>
+								<td>
+									<img data-src="media/results/pinbi_dynamics/gamma0.046_irrev_q0-7-0_z_ds.svg">
+								</td>
+							</table>
+							<p>$\chargeDensity^\ast = 0 \to 7,15 \to 0$</p>
+						</div>
+
+						<!--
+							E = 0:
+							E /= 0:
+								belle structuration nette en couches
+								plus de dipôles
+							E = 0:
+								reste des dipôles
+								structuration moins marquées
+						-->
+					</section>
+
+					<section>
+						<h4>Cycles irréversibles intermédiaires</h4>
+
+						<p>$\SMdensity^\ast = 0.52$; $\SMcomposition = 0, 1$; $\delta = 0,2$</p>
+						<img data-src="media/results/pinbi_dynamics/switchable_irrev.svg">
+
+						<p>
+							Après extinction du champ : état métastable.
+						</p>
+					</section>
+
+					<!--
+						But de ce travail :
+						démonstration de modulation par le champ
+						- rev
+						- irrev
+						- intermédiaires
+						pas d'applications particulières (visées),
+						si pour un capteur :
+							e.g. transition, détection : champ, température
+						affichage : transitoire, permanent ?
+						important temps caractéristique, pour finir
+
+						trop de paramètres : loi d'échelle pas évidente
+					-->
+
+					<section>
+						<h4>Modèle</h4>
+
+						<ul>
+							<li>Comportement linéaire en $\frictionCoefficient^\ast$,
+								coefficient de frottement <span class="alert">réduit</span> :
+								$\frictionCoefficient^\ast =
+								\frictionCoefficient \unitTime / \unitMass$,
+								$\frictionCoefficient = 3\pi \unitLength \dynamicViscosity$
+								(à dilution infinie...)
+							</li>
+							<li>
+								Echelle de temps newtonnienne :
+								$\unitTime = \unitLength \sqrt{\unitMass / \unitEnergy}$;
+								$\unitMass \propto \unitLength^3$
+							</li>
+							<li>
+								La loi d'échelle en fonction de la taille $\unitLength$
+								est déterminée par $\unitEnergy$ du potentiel WCA.
+							</li>
+							<li>
+								Nécessité d'un modèle microscopique pour l'interaction (répulsive)
+								entre colloïdes : répulsion en $1/r^{12}$ distribuée uniformément
+								dans une sphère de diamètre $\unitLength$.
+								<!-- partie attractive tuée -->
+								$\epsilon(\unitLength)$ déduit de $\phi_\mathrm{ss}$
+								via l'équivalence du second coefficient du viriel
+								$\secondVirial$ pour $u_\mathrm{WCA}$.
+							</li>
+						</ul>
 					</section>
 
 					<section>
 						<h4>Rôle de la taille des particules et loi d'échelle</h4>
-					</section>
 
-					<section>
-						<h4>Conclusion</h4>
+						<table width="100%" id="table_alignement">
+							<td width="50%">
+								<img data-src="media/results/pinbi_dynamics/potentials_fit_sigmaToEpsilon.svg">
+							</td>
+							<td>
+								2 régimes :
+								<ol>
+									<li>
+										<!-- up + down -->
+										$\epsilon$ constant : $t_\mathrm{cycle} \propto \unitLength^3$.
+										Si $\unitLength = 1 \mathrm{\mu m}$ et
+										$t_\mathrm{cycle} = 1500 \mathrm{s}$, alors
+										$t_\mathrm{cycle} \sim 1,5 \mathrm{s}$ pour
+										$\unitLength = 0,1 \mathrm{\mu m}$.
+									</li>
+									<li>
+										$\epsilon$ variable :
+										si $\epsilon \propto \unitLength^3$,
+										$t_\mathrm{cycle} = \mathrm{constant}$;
+										si $\epsilon \propto \unitLength^2$,
+										$t_\mathrm{cycle} \propto \unitLength$.
+										<!--
+											après inflexion, limite du modèlé,
+											attention / raffinement,
+											scaling : valable ?
+											attention : si gamma trop petit
+										-->
+										Pour $\unitLength = 1 \mathrm{nm}$,
+										$t_\mathrm{cycle} \sim 0,03 \mathrm{s}$ ?
+									</li>
+								</ol>
+							</td>
+						</table>
+
+						<p>
+							$t_\mathrm{cycle}$ varie sur plusieurs ordres de grandeur
+							en fonction de $\unitLength$ : marge sur les temps de réponse
+							en fonction des applications envisagées.
+						</p>
 					</section>
 			
 				</section>
+				
+				<section>
+					<h3>Conclusion</h3>
+					<!-- Limites ? -->
+
+					<ul>
+						<li>
+							Approfondissement de l'étude des propriétés
+							d'<span class="attention">équilibre</span> dans un pore large
+							d'un mélange binaire sous champ
+							(mouillage, démouillage, structuration, séparation de phase, etc.).
+						</li>
+						<li>
+							Etude de la <span class="attention">dynamique</span> de l'inversion
+							de population sous champ dans un pore étroit en contact avec
+							un réservoir :
+							<ul>
+								<!--
+								<li>
+									adaptation du modèle (interface explicite, champ non-uniforme,
+									etc.).
+								</li>
+								-->
+								<li>
+									influence sur le temps de remplissage/vidage de différents
+									paramètres
+									(intensité du champ, densité et composition &rarr;
+									irréversibilité).
+								</li>
+								<li>
+									tentatives de prédiction du temps de réponse
+									(des fluides moléculaires aux suspensions colloïdes).
+								</li>
+							</ul>
+						</li>
+						<li>
+							Outils de simulation numérique disponible en open source
+							(modifications nécessaires apportées aux codes).
+						</li>
+					</ul>
+				</section>
 
 				<section>
-					<h3>Conclusion et perspectives</h3>
+					<h3>Perspectives</h3>
+					<ul>
+						<li>
+							Etude du pore large : 
+							<ul>
+								<li>
+									Dynamique de transition : durée de la structuration,
+									relaxation.
+								</li>
+								<li>
+									Caractérisation des méso structures : formes, persistance.
+								</li>
+							</ul>
+						</li>
+						<li>
+							Approfondissement de la dynamique de l'inversion de population :
+							<ul>
+								<li>
+									Echelle des colloïdes :
+									augmentation du coefficient de frottement réduit,
+									prise en compte des interactions
+									hydrodynamiques (e.g. DPD), substitution par des macro ions,
+									structures sous-jacentes plus réalistes (&rarr; expérience).
+								</li>
+								<li>
+									Echelle du fluide moléculaire :
+									spécification des interactions particule-particule
+									et particule-mur (live wall).
+								</li>
+								<!-- <li>code ?</li> -->
+							</ul>
+						</li>
+					</ul>
+					<!-- vs LCD, OLED ? -->
 				</section>
 
 				<section>

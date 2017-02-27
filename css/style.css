@@ -1,9 +1,17 @@
 .xz_profile {
-    width: 50%;
+    width: 45%;
 }
 
 .animation {
     width: 50%;
+}
+
+.attention {
+    color: blue;
+}
+
+.alert {
+    color: red;
 }
 
 #table_alignement td {
