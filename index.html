@@ -73,14 +73,18 @@
 						<h3>Plan</h3>
 						<ol>
 							<li>Introduction : définition, motivation et modèle</li>
-								<!-- PINBI -->
 							<li>Propriétés d'équilibre en faible confinement</li>
-								<!-- minor, digression -->
 							<li>Aspects dynamiques de l'inversion de population sous champ</li>
-								<!-- major, re-PINBI -->
 							<li>Conclusion et perspectives</li>
 						</ol>
-						<!-- 1-3, 5-6: 50% du temps -->
+
+						<aside class="notes" data-markdown>
+							- Présenter le PINBI
+							- minor, digression
+							- major, re-PINBI
+
+							Aspect dynamique : 50% du temps
+						</aside>
 					</section>
 				</section>
 
@@ -113,9 +117,12 @@
 							</li>
 							<li class="fragment">
 								Etudes théoriques et expérimentales innombrables
-								<!-- nous : un aspect -->
 							</li>
 						</ul>
+
+						<aside class="notes" data-markdown>
+							"Etudes ... innombrables" : nous, un aspect
+						</aside>
 					</section>
 
 					<section>
@@ -139,8 +146,11 @@
 								Dans un mélange : possibilité d'inversion de population
 								sous champ (C. Brunet, 2009, PLMC).
 								Etude suffisamment importante pour être poursuivie.
-								<!-- cette thèse / E. Trizac : rapporteur -->
 							</li>
+
+							<aside class="notes" data-markdown>
+								cette thèse / E. Trizac : rapporteur
+							</aside>
 						</ul>
 
 						<p></p>
@@ -184,9 +194,7 @@
 								dont les interactions à courte portée sont purement répulsives
 								(simplification).
 								Correspond aux colloïdes stabilisés stériquement
-								ou avec une très courte longueur d'écrantage.								
-								<!-- déclinaison la plus simple -->
-								<!-- $\delta$ -> mélange instable -->
+								ou avec une très courte longueur d'écrantage.
 							</li>
 							<div class="fragment">
 								<table width=50%>
@@ -215,23 +223,23 @@
 								soit un champ normal localisé (pore avec interface explicite en DM).
 							</li>
 						</ul>
-						<!--
-							Etude : comme si champ électrique / certains aspects spécifiques
+
+						<aside class="notes" data-markdown>
+							- non-additivité :
+							déclinaison la plus simple -> mélange instable
+							- Etude : comme si champ électrique / certains aspects spécifiques
 							aux champs électriques. Mais mécanismes physiques / généraux->
-							peut être magnétique, e.g. ferrocolloïdes.
-						-->
+							peut être magnétique, e.g. ferrocolloïdes. 
+						</aside>
 					</section>
 
 					<section>
 						<h4>But</h4>
-						<!-- Pourquoi faire -->
-						<!-- 2 directions principales-->
 						<ol>
 							<li class="fragment">
 								Approfondir l'étude des propriétés d'équilibre
 								du fluide confiné dans un pore-fente :
 								généralisation, éclairage supplémentaire.
-								<!-- moins de confinement, dip plus -->
 							</li>
 							<li class="fragment">
 								(Nouveauté) Etude de la dynamique pour des applications avec une
@@ -239,7 +247,7 @@
 								transition entre 2 états d'équilibre, temps caractéristique, etc.
 							</li>
 						</ol>
-						<!-- Avant de présenter nos résultats, précisons le modèle physique -->
+						
 						<p class="fragment">
 							<strong>sphères dures + dipôles (non additifs)</strong> et
 							<strong>champ extérieur</strong> : ingrédients essentiels.
@@ -252,6 +260,14 @@
 							<li>à l'échelle moléculaire : probablement</li>
 							<li>à l'échelle supramoléculaire : moins évident</li>
 						</ul>
+
+						<aside class="notes" data-markdown>
+							Pourquoi faire ?
+							2 directions principales
+							- équilibre : moins de confinement, dip plus
+
+							Avant de présenter nos résultats, précisons le modèle physique
+						</aside>
 					</section>
 
 					<section>
@@ -299,10 +315,12 @@
 					<section>
 						<h4>Elaboration d'un pore</h4>
 						<p>(insérer : image)</p>
-					</section>
 
-					<!-- Ce n'est pas de la science fiction ! -->
-					<!-- On y revient dans la partie dynamique-->
+						<aside class="notes" data-markdown>
+							- Ce n'est pas de la science fiction !
+							- On y revient dans la partie dynamique.
+						</aside>
+					</section>
 
 					<section>
 						<h4>Méthodes de simulation</h4>
@@ -315,11 +333,6 @@
 								Système à l'équilibre : Monte-Carlo Metropolis
 								(développé en interne)
 							</li>
-								<!--
-									Q : est-ce suffisant (échantillonnage) ? 
-									méthodes standards
-									résultats qui semblaient qualitativement cohérent
-								-->
 							<li class="fragment">
 								Système hors équilibre : dynamique moléculaire + Langevin
 								($\espresso{}$)
@@ -329,6 +342,12 @@
 								([YB99], ELC)
 							</li>
 						</ul>
+
+						<aside class="notes" data-markdown>
+							Q : est-ce suffisant (échantillonnage MC) ? 
+								- méthodes standards
+								- résultats qui semblaient qualitativement cohérent
+						</aside>
 					</section>
 				</section>
 
@@ -453,9 +472,12 @@
 							</td>
 							<!-- centré légende -->
 						</table>
-						<!-- attention : définition de la densité -->
-						<!-- nombre de particule fixé, bord (extrémité du pore <<réel>>) négligé -->
-						<!-- ici, mix / démix. G/L si autre chemin -->
+
+						<aside class="notes" data-markdown>
+							- [attention] : définition de la densité
+							- nombre de particule fixé, bord (extrémité du pore "réel") négligé
+							- ici, mix / démix. G/L si autre chemin
+						</aside>
 					</section>
 
 					<section>
@@ -525,7 +547,6 @@
 							</table>
 							<!-- dans la figure ? -->
 						</div>
-						<!-- Mélange homogène ? pas aussi simple-->
 
 						<table width="100%" id="table_alignement" class="fragment">
 							<!-- couleur : cohérent : orange / bleu -->
@@ -534,7 +555,6 @@
 							</td>
 							<td width="33%">
 								<img data-src="media/results/field_mixture/highPerpField_highDensity_xyDensity_ds.png">
-								<!-- colonnes -->
 							</td>
 							<td>
 								<ul>
@@ -542,16 +562,19 @@
 										configuration représentative et densité 2D moyennée sur
 										quelques milliers de pas
 									</li>
-									<!-- nombre exacte ? -->
-									<!-- séparation de phases locale ? -->
 									<li>
 										structures mésoscopiques bien définies : persistantes ?
 									</li>
-									<!-- strucutre transitoire ? pas de symétrie -> métastable -->
-									<!-- taille de la boîte ? dév. ultérieur   ? -->
 								</ul>
 							</td>
 						</table>
+
+						<aside class="notes" data-markdown>
+							- Mélange homogène ? pas aussi simple
+							- nombre exacte de colonnes ? séparation de phases locale ?
+							- structure transitoire ? pas de symétrie -> métastable ?
+							- taille de la boîte ? dév. ultérieur
+						</aside>
 					</section>
 
 					<section>
@@ -588,15 +611,18 @@
 										<li>
 											2 phases dans la même boîte &rarr; densités de la GEMC !
 										</li>
-										<!-- on aurait pu penser : un mélange plus homogène -->
-										<!-- presque spatialement séparés -->
-										<!-- séparation de phase en canonique : énorme système -->
-										<!-- ici : grâce aux murs -->
 										<li>transitoire, instable ?</li>
 									</ul>
 								</td>
 							</table>
 						</div>
+
+						<aside class="notes" data-markdown>
+							- on aurait pu penser : un mélange plus homogène,
+							presque spatialement séparés -->
+							- séparation de phase en canonique : énorme système,
+							ici : grâce aux murs
+						</aside>
 					</section>
 
 					<section>
@@ -734,19 +760,6 @@
 						<!-- Rappel de l'interaction dipolaire : permittivity ? --> 
 					</section>
 
-					<!--
-
-						<section>
-							<h4>Méthodes de simulation</h4>
-							<p>Paramètres ?</p>
-							<ul>
-								<li>MC : homemade</li>
-								<li>DM : Espresso</li>
-							</ul>
-							+ modifications
-						</section>
-					-->
-
 					<section>
 						<h4>Profils de densité dans la région centrale du pore à champ nul</h4>
 
@@ -788,7 +801,8 @@
 
 					<section>
 						<h4>
-							Profils de densité dans la région centrale du pore après allumage du champ
+							Profils de densité dans la région centrale du pore après allumage
+							du champ
 						</h4>
 						<table width="100%" id="table_alignement" class="fragment">
 							<td width="50%">
@@ -810,19 +824,12 @@
 							</td>
 						</table>
 
-						<!--  -->
+						<aside class="notes" data-markdown>
+							[Transition]
+							- Importance : cycle de champ est réversible.
+							Nous allons l'illustrer de manière visuelle.
+						</aside>
 					</section>
-
-					<!-- 
-						[Transition]
-						Illustration visuelle
-						Nous illustrons la réversibilité du cycle du champ en montrant
-						les profils de densité des dipôles à la même échelle
-						dans la séquence réversibilité : "avant, après, retour".
-
-						Importance : cycle de champ est réversible.
-						Nous allons l'illustrer de manière visuelle.
-					-->
 
 					<!-- densité 2D , densité 1D -->
 					<section>
@@ -865,17 +872,17 @@
 							<p>$\chargeDensity^\ast = 0 \to 14,3 \to 0$</p>
 						</div>
 
-						<!--
-							Partons : E=0
+						<aside class="notes" data-markdown>
+							- Partons : E=0
 								droite : rho(z)
 								gauche : l'aspect visuel du système, vert : SA / bleu : SD,
 									SD : pratiquement invisible
 								ajouter : SA
-							E /= 0
+							- E /= 0
 								dipôles au centre
-							E = 0
+							- E = 0
 								retour à la situation initiale
-						-->
+						</aside>
 					</section>
 
 					<section>
@@ -890,14 +897,15 @@
 						</div>
 
 						<!--
-							2nd pass : sans commentaire
-							-> Q : temps caractéristique ?
 							zoomer : z in [-5:5]
 						-->
+
+						<aside class="notes" data-markdown>
+							- 2nd pass : sans commentaire
+							- -> Q : Et entre ? temps caractéristique ?
+						</aside>
 					</section>
-
-
-					<!-- Et entre ? -->
+					
 					<section>
 						<h4>Dynamique de l'inversion de population sous champ</h4>
 						
@@ -927,19 +935,18 @@
 							<span class="attention">Echelle de temps</span> :
 							$\unitTime = \unitLength \sqrt{\unitMass / \unitEnergy} =
 							2,55e-5 \mathrm{s}$ ?
-						</p>						
+						</p>
 
-						<!--
-							Inversion de population en dynamique :
-							faible gamme : temps raisonnement
-							...
-							après adimenstionnement :
+						<aside class="notes" data-markdown>
+							- Inversion de population en dynamique :
+							faible gamme : temps raisonnement /
+							Q : quelle valeur de gamma ? bien plus grande pour les colloïdes /
+							attention : temps de calcul
+							
+							- après adimensionnement :
 							en prenant : cette échelle "arbitrairement" sigma/m/epsilon.
 							Nous y reviendrons par la suite.
-
-							Q : quelle valeur de gamma ? bien plus grande pour les colloïdes
-							attention : temps de calcul
-						-->
+						</aside>
 					</section>
 
 					<!--
@@ -953,7 +960,8 @@
 
 					<section>
 						<h4>
-							Loi d'échelle en fonction de $\frictionCoefficient^\ast$ et champs croissants
+							Loi d'échelle en fonction de $\frictionCoefficient^\ast$ et
+							champs croissants
 						</h4>
 						<table width="100%" id="table_alignement">
 							<td width="50%" class="fragment">
@@ -973,14 +981,13 @@
 								<p>Champs croissants : saturation prématurée</p>
 							</td>
 						</table>
-						<!--
-							gamma colloïdes : gamma = 460 (1 \micro\meter)
-							extrapolé
-							saturation
 
-							certains paramètres : rév.
+						<aside class="notes" data-markdown>
+							- gamma colloïdes : gamma^ast = 460 (sigma = 1 micrometer), extrapolé
+
+							- certains paramètres : rév.
 							et si on change de params. ? cycles irrév.
-						-->
+						</aside>
 					</section>
 
 					<section>
@@ -1008,12 +1015,6 @@
 										La combinaison $\SMcomposition = 0,1$;
 										$\SMdensity^\ast = 0,6$ et $\delta = 0,2$
 										correspond à un état diphasique.
-										<!--
-											état initiale : peu dipôles, métastable
-											(proche coexistence)
-											avec champ : sélection de la phase riche
-											le champ a été coupé
-										-->
 									</li>
 									<li>
 										Le champ <span class="attention">sélectionne</span>
@@ -1023,12 +1024,16 @@
 							</td>
 						</table>
 
-						<!--
-							situation particulière (irréversible) :
+						<aside class="notes" data-markdown>
+							- état initiale : peu dipôles, métastable
+							(proche coexistence)
+							- avec champ : sélection de la phase riche
+							le champ a été coupé
+							- situation particulière (irréversible) :
 							illustration plus visuelle (le système ne revient pas à la situation
 							initiale après extinction du champ)
 							par les prochaines figures :
-						-->
+						</aside>
 					</section>
 
 					<section>
@@ -1068,15 +1073,15 @@
 							<p>$\chargeDensity^\ast = 0 \to 7,15 \to 0$</p>
 						</div>
 
-						<!--
-							E = 0:
-							E /= 0:
+						<aside class="notes" data-markdown>
+							- E = 0:
+							- E /= 0:
 								belle structuration nette en couches
 								plus de dipôles
-							E = 0:
+							- E = 0:
 								reste des dipôles
 								structuration moins marquées
-						-->
+						</aside>
 					</section>
 
 					<section>
@@ -1089,21 +1094,6 @@
 							Après extinction du champ : état métastable.
 						</p>
 					</section>
-
-					<!--
-						But de ce travail :
-						démonstration de modulation par le champ
-						- rev
-						- irrev
-						- intermédiaires
-						pas d'applications particulières (visées),
-						si pour un capteur :
-							e.g. transition, détection : champ, température
-						affichage : transitoire, permanent ?
-						important temps caractéristique, pour finir
-
-						trop de paramètres : loi d'échelle pas évidente
-					-->
 
 					<section>
 						<h4>Modèle</h4>
@@ -1135,6 +1125,18 @@
 								$\secondVirial$ pour $u_\mathrm{WCA}$.
 							</li>
 						</ul>
+
+						<aside class="notes" data-markdown>
+							But de ce travail :
+							- démonstration de modulation par le champ :
+							rev / irrev / intermédiaires
+							- pas d'applications particulières (visées),
+							si pour un capteur :
+								e.g. transition, détection : champ, température
+							affichage : transitoire, permanent ?
+							- important temps caractéristique, pour finir
+							- trop de paramètres : loi d'échelle pas évidente
+						</aside>
 					</section>
 
 					<section>
@@ -1161,12 +1163,6 @@
 										$t_\mathrm{cycle} = \mathrm{constant}$;
 										si $\epsilon \propto \unitLength^2$,
 										$t_\mathrm{cycle} \propto \unitLength$.
-										<!--
-											après inflexion, limite du modèlé,
-											attention / raffinement,
-											scaling : valable ?
-											attention : si gamma trop petit
-										-->
 										Pour $\unitLength = 1 \mathrm{nm}$,
 										$t_\mathrm{cycle} \sim 0,03 \mathrm{s}$ ?
 									</li>
@@ -1179,86 +1175,97 @@
 							en fonction de $\unitLength$ : marge sur les temps de réponse
 							en fonction des applications envisagées.
 						</p>
+
+						<aside class="notes" data-markdown>
+							- après inflexion, limite du modèlé,
+							attention / raffinement,
+							- scaling : valable ?
+							attention : si gamma trop petit
+						</aside>
 					</section>
 			
 				</section>
 				
 				<section>
-					<h3>Conclusion</h3>
-					<!-- Limites ? -->
 
-					<ul>
-						<li>
-							Approfondissement de l'étude des propriétés
-							d'<span class="attention">équilibre</span> dans un pore large
-							d'un mélange binaire sous champ
-							(mouillage, démouillage, structuration, séparation de phase, etc.).
-						</li>
-						<li>
-							Etude de la <span class="attention">dynamique</span> de l'inversion
-							de population sous champ dans un pore étroit en contact avec
-							un réservoir :
-							<ul>
-								<!--
-								<li>
-									adaptation du modèle (interface explicite, champ non-uniforme,
-									etc.).
-								</li>
-								-->
-								<li>
-									influence sur le temps de remplissage/vidage de différents
-									paramètres
-									(intensité du champ, densité et composition &rarr;
-									irréversibilité).
-								</li>
-								<li>
-									tentatives de prédiction du temps de réponse
-									(des fluides moléculaires aux suspensions colloïdes).
-								</li>
-							</ul>
-						</li>
-						<li>
-							Outils de simulation numérique disponible en open source
-							(modifications nécessaires apportées aux codes).
-						</li>
-					</ul>
-				</section>
+					<section>
+						<h3>Conclusion</h3>
+						<!-- Limites ? -->
 
-				<section>
-					<h3>Perspectives</h3>
-					<ul>
-						<li>
-							Etude du pore large : 
-							<ul>
-								<li>
-									Dynamique de transition : durée de la structuration,
-									relaxation.
-								</li>
-								<li>
-									Caractérisation des méso structures : formes, persistance.
-								</li>
-							</ul>
-						</li>
-						<li>
-							Approfondissement de la dynamique de l'inversion de population :
-							<ul>
-								<li>
-									Echelle des colloïdes :
-									augmentation du coefficient de frottement réduit,
-									prise en compte des interactions
-									hydrodynamiques (e.g. DPD), substitution par des macro ions,
-									structures sous-jacentes plus réalistes (&rarr; expérience).
-								</li>
-								<li>
-									Echelle du fluide moléculaire :
-									spécification des interactions particule-particule
-									et particule-mur (live wall).
-								</li>
-								<!-- <li>code ?</li> -->
-							</ul>
-						</li>
-					</ul>
-					<!-- vs LCD, OLED ? -->
+						<ul>
+							<li>
+								Approfondissement de l'étude des propriétés
+								d'<span class="attention">équilibre</span> dans un pore large
+								d'un mélange binaire sous champ
+								(mouillage, démouillage, structuration, séparation de phase, etc.).
+							</li>
+							<li>
+								Etude de la <span class="attention">dynamique</span> de l'inversion
+								de population sous champ dans un pore étroit en contact avec
+								un réservoir :
+								<ul>
+									<!--
+									<li>
+										adaptation du modèle (interface explicite, champ non-uniforme,
+										etc.).
+									</li>
+									-->
+									<li>
+										influence sur le temps de remplissage/vidage de différents
+										paramètres
+										(intensité du champ, densité et composition &rarr;
+										irréversibilité).
+									</li>
+									<li>
+										tentatives de prédiction du temps de réponse
+										(des fluides moléculaires aux suspensions colloïdes).
+									</li>
+								</ul>
+							</li>
+							<li>
+								Outils de simulation numérique disponible en open source
+								(modifications nécessaires apportées aux codes).
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Perspectives</h3>
+						<ul>
+							<li>
+								Etude du pore large : 
+								<ul>
+									<li>
+										Dynamique de transition : durée de la structuration,
+										relaxation.
+									</li>
+									<li>
+										Caractérisation des méso structures : formes, persistance.
+									</li>
+								</ul>
+							</li>
+							<li>
+								Approfondissement de la dynamique de l'inversion de population :
+								<ul>
+									<li>
+										Echelle des colloïdes :
+										augmentation du coefficient de frottement réduit,
+										prise en compte des interactions
+										hydrodynamiques (e.g. DPD), substitution par des macro ions,
+										structures sous-jacentes plus réalistes (&rarr; expérience).
+									</li>
+									<li>
+										Echelle du fluide moléculaire :
+										spécification des interactions particule-particule
+										et particule-mur (live wall).
+									</li>
+									<!-- <li>code ?</li> -->
+								</ul>
+							</li>
+						</ul>
+						<!-- vs LCD, OLED ? -->
+					</section>
+
 				</section>
 
 				<section>
@@ -1388,7 +1395,7 @@
 				history: true,
 				loop: true,
 				fragments: true,
-				width: "65%",
+				width: "100%",
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
