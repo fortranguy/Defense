@@ -59,6 +59,9 @@
 						$\def\CSsoftware{\textsf}$
 						$\def\espresso{\CSsoftware{ESPResSo}}$
 						$\def\secondVirial{B_2}$
+
+						<aside class="notes" data-markdown>
+						</aside>
 					</section>
 
 					<section data-transition="fade-in">
@@ -67,23 +70,20 @@
 							suspensions colloïdales confinées : étude numérique par simulation
 						</h3>
 						<p>Salomon Chung, PLMC (UPEC)</p>
-					</section>
 
-					<section>
-						<h3>Plan</h3>
-						<ol>
-							<li>Introduction : définition, motivation et modèle</li>
+						<ol class="fragment">
+							<li>Introduction : motivation et modèle</li>
 							<li>Propriétés d'équilibre en faible confinement</li>
 							<li>Aspects dynamiques de l'inversion de population sous champ</li>
 							<li>Conclusion et perspectives</li>
 						</ol>
 
 						<aside class="notes" data-markdown>
-							- Présenter le PINBI
-							- minor, digression
-							- major, re-PINBI
+							- Dans cette exposée, je vous présente le travail effectué...
+							- Je suivrai le plan suivant...
+							- Présenter le PINBI / minor, digression / major, re-PINBI
 
-							Aspect dynamique : 50% du temps
+							[temps] Aspect dynamique : 50%
 						</aside>
 					</section>
 				</section>
@@ -94,75 +94,93 @@
 					</section>
 
 					<section>
-						<h4>Suspensions colloïdales</h4>
+						<h4>Colloïdes </h4>
 						
-						<p class="fragment">Définition</p>
-						<ul class="fragment">
-							<li>Dispersion de macro particules dans un milieu porteur.</li>
+						<ul class="fragment" data-fragment-index="1">
+							<li>Dispersion de macroparticules dans un milieu porteur.</li>
 							<li>Taille : du nanomètre au micromètre.</li>
-							<li>Large gamme d'échelle de longueur et de temps</li>
+							<li>Large gamme d'échelle de longueur et de temps.</li>
 						</ul>
 						
-						<p class="fragment">Propriétés</p>
-						<ul>
-							<li class="fragment">Objets supramoléculaires &rarr; flexibilité :
-								modulation des interactions entre les particules
-								en jouant sur leur structure,
-								physico-chimie, le milieu porteur,
-								la géométrie et les champs extérieurs
-							</li>
-							<li class="fragment">
-								Applications très diverses : <!-- couleur ? -->
-								alimentaire, cosmétique, nanotechnologie, etc
-							</li>
-							<li class="fragment">
-								Etudes théoriques et expérimentales innombrables
-							</li>
-						</ul>
+						<p class="fragment" data-fragment-index="2">
+							Objets supramoléculaires : propriétés particulières
+						</p>
+						<table width="100%" id="table_alignement">
+							<td>
+								<ul>
+									<li class="fragment" data-fragment-index="3">
+										Modulation des interactions entre les particules
+										en jouant sur leur structure,
+										physico-chimie, le milieu porteur,
+										la géométrie et les champs extérieurs
+									</li>
+									<li class="fragment" data-fragment-index="4">
+										Applications dans des domaines très divers : <!-- couleur ? -->
+										alimentaire, cosmétique, nanotechnologie, etc
+									</li>
+									<li class="fragment" data-fragment-index="5">
+										Etudes théoriques et expérimentales innombrables
+										<!-- un siècle / J. Perrin -->
+										[Brown 1827, Perrin 1903, ...]
+									</li>
+								</ul>
+							</td>
+							<td class="fragment" data-fragment-index="3">
+								<img data-src="media/introduction/core_shell.jpg">
+								<table>
+									<td class="fragment" data-fragment-index="4">
+										<img data-src="media/introduction/colloidal_domain.jpg">
+									</td>
+									<td class="fragment" data-fragment-index="5">
+										<img data-src="media/introduction/intermolecular.jpg">
+									</td>
+								</table>
+							</td>
+						</table>
 
 						<aside class="notes" data-markdown>
-							"Etudes ... innombrables" : nous, un aspect
+							- Les systèmes colloïdaux auquel nous nous intéressons
+							dans ce travail, sont dispersion... /
+							 "Large gamme" ils couvrent donc par ...
+							- Opposition / différentes ? aux systèmes moléculaires, 
+							- [Modulation] Un modèle : calculer la polarisabilité de
+							2 types de particules colloïdales recouvertes de protéines.
+							- "Etudes ... innombrables": ont fait l'objet / nous, un aspect
+
+							(suspension > dispersion)
 						</aside>
 					</section>
 
 					<section>
-						<h4>Cadre</h4>
+						<h4>Contexte de ce travail</h4>
 					
 						<ul>
 							<li class="fragment">
-								A partir des travaux antérieurs de l'équipe
-								(simulation, modélisation, physique statistique, 
-								physique des liquides) :
+								Continuité des travaux antérieurs de l'équipe :
 								tenter de dégager les paramètres pertinents et
-								les tendances généraux &rarr;
-								guide pour l'expérience
-								(généricité vs. spécificité, théorie &rarr; application)
+								les tendances générales (généricité vs. spécificité) &rarr;
+								guide pour l'expérience et les applications.
 							</li>
 							<li class="fragment">
-								1 axe particulier : colloïdes + champ extérieur, pour contrôler
-								de manière réversible le système.
-							</li>
-							<li class="fragment">
-								Dans un mélange : possibilité d'inversion de population
-								sous champ (C. Brunet, 2009, PLMC).
-								Etude suffisamment importante pour être poursuivie.
+								Sujet précis : colloïdes confinés sous un champ extérieur.
+								Possibilité d'inversion de population
+								dans un mélange (C. Brunet, 2009, PLMC),
+								résultats jugés suffisamment importants pour être développés.
 							</li>
 
 							<aside class="notes" data-markdown>
-								cette thèse / E. Trizac : rapporteur
+								- simulation, modélisation, physique statistique, 
+								physique des liquides : étude en amont 
+								- cette thèse / E. Trizac : rapporteur/
+								structure et diagramme de phase
 							</aside>
 						</ul>
 
 						<p></p>
-						<h4 class="fragment">Situation physique</h4>
-						<div class="fragment">
-						<p>
-							Manipulation par un champ extérieur de la composition d'un mélange binaire
-							confiné.
-						</p>
+						<h4 class="fragment">Ingrédients physiques</h4>
 						<table width="100%" class="fragment" id="table_alignement">
 							<td width="25%">
-								<img data-src="media/introduction/model.png" width="50%">
+								<img data-src="media/introduction/model.png">
 							</td>
 							<td>
 								<ul>
@@ -172,23 +190,23 @@
 										<!-- nature, expérience : rare corps pur -->
 									</li>
 									<li>
-										confinement : plus riche qu'en phase volumique
+										confinement : comportement plus varié qu'en phase volumique
 									</li>
 										<!-- PINBI : comme séparation de phase -->
 									<li>
-										champ extérieur : contrôle réversible et "non intrusif"
+										champ extérieur : contrôle réversible et
+										&laquo; non intrusif &raquo;
 									</li>
 								</ul>
 							</td>
 						</table>
-						</div>
 					</section>
 
 					<section>						
 						<h4>Modèle physique</h4>
 
 						<ul>
-							<li class="fragment">
+							<li class="fragment" data-fragment-index="1">
 								Mélange binaire à diamètres non-additifs :
 								sphères dipolaires (SD) et apolaires (SA),
 								dont les interactions à courte portée sont purement répulsives
@@ -196,28 +214,33 @@
 								Correspond aux colloïdes stabilisés stériquement
 								ou avec une très courte longueur d'écrantage.
 							</li>
-							<div class="fragment">
-								<table width=50%>
-									<td>
-										<img data-src="media/introduction/interaction_contact.svg">
-									</td>
-									<td width=40%>
-										<img data-src="media/results/pinbi_dynamics/potential.svg">
-									</td>
-								</table>
-								<p>
-									La non-additivité favorise la démixtion.
+							<table width=50%>
+								<td class="fragment" data-fragment-index="2">
+									<img data-src="media/introduction/interaction_contact.png">
+								</td>
+								<td class="fragment" data-fragment-index="3">
+									<img data-src="media/results/pinbi_dynamics/potential.svg">
+								</td>
+							</table>
+							<p>
+								<span class="fragment" data-fragment-index="2">
+									La non-additivité positive ($\delta > 0$) favorise la démixtion.
+								</span>
+								<span class="fragment" data-fragment-index="3">
 									Pour la DM : assouplissement de l'interaction dure &rarr; 
 									potentiel mou (e.g. WCA).
-								</p>
-							</div>
-							<li class="fragment">
+								</span>
+							</p>
+							<li class="fragment" data-fragment-index="4">
+								Pas de solvant explicite ($\epsilon_\text{eff}$, $\gamma$).
+							</li>
+							<li class="fragment" data-fragment-index="5">
 								Géométrie de confinement :
 								pore fente (deux murs parallèles sans structure) ou 
 								pore de taille finie avec interface explicite avec la phase
 								volumique (dynamique).
 							</li>
-							<li class="fragment">
+							<li class="fragment" data-fragment-index="6">
 								Champ extérieur : soit un champ uniforme normal ou parallèle aux
 								parois (pore-fente),
 								soit un champ normal localisé (pore avec interface explicite en DM).
@@ -230,11 +253,12 @@
 							- Etude : comme si champ électrique / certains aspects spécifiques
 							aux champs électriques. Mais mécanismes physiques / généraux->
 							peut être magnétique, e.g. ferrocolloïdes. 
+							- solvant : plus simple expression
 						</aside>
 					</section>
 
-					<section>
-						<h4>But</h4>
+					<section data-state="main_theme">
+						<h4>Objectifs</h4>
 						<ol>
 							<li class="fragment">
 								Approfondir l'étude des propriétés d'équilibre
@@ -249,8 +273,9 @@
 						</ol>
 						
 						<p class="fragment">
-							<strong>sphères dures + dipôles (non additifs)</strong> et
-							<strong>champ extérieur</strong> : ingrédients essentiels.
+							<strong>sphères dures</strong> + <strong>dipôles</strong> (non additifs),
+							<strong>confinement</strong> et <strong>champ extérieur</strong> :
+							ingrédients essentiels.
 						</p>
 						<!-- confinement ? -->
 
@@ -258,7 +283,7 @@
 						<!-- i.e. contraignant ? simpliste ? irréalisable ? -->
 						<ul class="fragment">
 							<li>à l'échelle moléculaire : probablement</li>
-							<li>à l'échelle supramoléculaire : moins évident</li>
+							<li>à l'échelle supramoléculaire : peut-être pas</li>
 						</ul>
 
 						<aside class="notes" data-markdown>
@@ -266,43 +291,61 @@
 							2 directions principales
 							- équilibre : moins de confinement, dip plus
 
-							Avant de présenter nos résultats, précisons le modèle physique
+							Avant de présenter nos résultats,
+							nous verrons des réalisations expérimentales :
+							comment ce modèle pourrait être réalisé concrètement.
+						</aside>
+					</section>
+
+					<section data-state="factory_theme">
+						<!-- <h4>Schéma de principe</h4> -->
+						<!-- beige -->
+						<h4>Dipôles électriques (induits)</h4>
+						<!-- peu de ferroélectrique -->
+
+						<ul>
+							<li class="fragment" data-fragment-index="1">
+								Différence de polarisabilité
+								(contraste diélectrique particule - solvant,
+								e.g. $\epsilon_2 \gg \epsilon_1 \simeq \epsilon$)
+								<!-- index matched -->
+							</li>
+							<li class="fragment" data-fragment-index="2">
+								Non-additivité ($\delta$) faisable dans le cadre de
+								la stabilisation stérique
+								(e.g. interpénétration des polymères)
+							</li>
+						</ul>
+						<table width="100%" id="table_alignement">
+							<td width="45%" class="fragment" data-fragment-index="1">
+								<img data-src="media/introduction/2spheres.svg">
+							</td>
+							<td class="fragment" data-fragment-index="1">
+								<img data-src="media/introduction/hollow.png" >
+							</td>
+						</table>
+						<div class="fragment" data-fragment-index="2">
+							<img data-src="media/introduction/grafting.png">
+						</div>
+						<!-- réserve : greffe / -->
+
+						<aside class="notes" data-markdown>
+							- billes de silice creuse / pleine : contraste (attention: si creux ?)
+							- creux + cheveux 
+							- stérStab : pas propre aux dip. élect. ?
 						</aside>
 					</section>
 
 					<section>
-						<!-- <h4>Schéma de principe</h4> -->
-						<h4>Champ et dipôles électriques</h4>
 
-						<ul>
-							<li class="fragment">
-								contraste des moments dipolaires ($\vec{\dip}$) :
-								particules polarisables et les autres moins
-								(contraste diélectrique, index match particule - solvant)
-							</li>
-							<li class="fragment">
-								stabilisation stérique : non-additivité probablement faisable
-								(e.g. interpénétration des polymères)
-							</li>
-						</ul>
-						<div class="fragment">
-							<img data-src="media/introduction/non_add.png">
-							<img data-src="media/introduction/marr_confined_beads.png" width=25%>
-						</div>
-					</section>
-
-					<section>
-
-						<h4>Champ et dipôles magnétiques</h4>
+						<h4>Dipôles magnétiques (permanents) : ferrocolloïdes</h4>
 						
 						<!-- proche de notre système -->
 						<p class="fragment">
-							Pour les systèmes magnétiques
-							(plus fréquemment étudiés dans la littérature) :
-							Facilement réalisables pour les colloïdes.
-							e.g. ferrocolloïdes : <!-- fig. 9, 12 -->
+							Nombreuses études dans la littérature :
+							<!-- fig. 9, 12 -->
 							séparation de phase induite par champ,
-							principe des filtres optiques.
+							&laquo; cristaux photoniques &raquo;, etc.
 							<!-- géométrie : faisable -->
 						</p>
 						<div class="fragment">
@@ -310,27 +353,87 @@
 							<img data-src="media/introduction/less_dip.png" width=20%>
 							<img data-src="media/introduction/sacanna_separation.jpg" width=25%>
 						</div>
-					</section>
-
-					<section>
-						<h4>Elaboration d'un pore</h4>
-						<p>(insérer : image)</p>
+						<!-- moment dipolaire : courbe ? -->
 
 						<aside class="notes" data-markdown>
-							- Ce n'est pas de la science fiction !
-							- On y revient dans la partie dynamique.
+							- ferrofluide
+							- contraste dip.
 						</aside>
 					</section>
 
 					<section>
-						<h4>Méthodes de simulation</h4>
+						<h4>Confinement</h4>
+
+						<p>En laboratoire</p>
+
+						Gong et at., Langmuir 18, 10064, (2002), Langmuir 17, 2301, (2001)
+						<table class="fragment">
+							<td>
+								<img data-src="media/introduction/wedge.png">
+							</td>
+							<td>
+								<img data-src="media/introduction/marr_confined_beads.png">
+							</td>
+						</table>
+						<img data-src="media/introduction/confiment+field.png" class="fragment">
+
+						<aside class="notes" data-markdown>
+							- 3ème ingrédient : milieu confinant
+							- élémentaire (labo : faisabilité) : entre 2 plaques de verre,
+							e.g. wedge : bulk / slab : ITO pour champ (conductrice)
+							- Ces articles de Marr: stimulé: 
+							colloïdes confinés sous champ (travaux de l'équipe).
+							(sphères de polystyrène)
+							- Applications éventuelles de l'effet de champ,
+							un confinement plus spécifique pour chaque application...
+						</aside>
+					</section>
+
+					<section data-state="factory_theme">
+						<p>Pour des applications : matériaux poreux</p>
+						
+						<ul>
+							<li class="fragment">
+								Silice poreuse :
+								T. Sen et al., Chem. Mater. 16, 2044, (2004)
+								<img data-src=" media/introduction/pore.png">
+							</li>
+							<li class="fragment">
+								Matrice organométallique :
+								J. L. C. Rowsell, O. M. Yaghi,
+								Microporous and Mesoporous Materials 73, 3, (2004) :
+								<ul id="quotation">
+									<li>large pore sizes, high apparent surface areas</li>
+									<li>selective uptake of small molecules</li>
+									<li>
+										<span class="attention">optical or magnetic responses</span>
+										to the inclusion of guests
+									</li>
+									<li>potential for directed tailoring of these properties</li>
+								</ul>
+							</li>
+						</ul>
+
+						<aside class="notes" data-markdown>
+							- On y revient dans la partie dynamique.
+							- Les progrès considérables réalisés ces dernières années
+							dans l'élaboration de matériaux poreux :
+							la fabrication d'un milieu confinant pour une application particulière
+							s'effectuera sans difficultés majeures.
+							- Rowsell : 1350 citations -> liste de l'abstract,
+							des qualités milieux poreux / guests?
+						</aside>
+					</section>
+
+					<section data-state="main_theme">
+						<h4>Méthodes d'étude</h4>
 
 						<ul>
 							<li class="fragment">
-								Complexité du modèle : pas de méthodes analytiques
+								Complexité du modèle : problèmes avec les méthodes analytiques
 							</li>
 							<li class="fragment">
-								Système à l'équilibre : Monte-Carlo Metropolis
+								Système à l'équilibre : Monte-Carlo
 								(développé en interne)
 							</li>
 							<li class="fragment">
@@ -347,6 +450,8 @@
 							Q : est-ce suffisant (échantillonnage MC) ? 
 								- méthodes standards
 								- résultats qui semblaient qualitativement cohérent
+
+							MD + Langevin : pseudo-dynamique ?
 						</aside>
 					</section>
 				</section>
@@ -355,10 +460,11 @@
 					<section>
 						<h3>
 							Effet d'un champ sur un mélange confiné de sphères dipolaires et
-							apolaires : propriétés à l'équilibre
+							apolaires : <br>propriétés à l'équilibre
 						</h3>
 					</section>
 
+					<!--
 					<section>
 						<h4>Plan</h4>
 
@@ -375,6 +481,7 @@
 							<li class="fragment">Conclusion</li>
 						</ol>
 					</section>
+					-->
 
 					<section>
 						<h4>Modèle</h4>
@@ -384,7 +491,7 @@
 						<!-- aussi selon $z$ : correction électrostatique -->
 						<table width="100%" id="table_alignement">
 							<td width="40%">
-								<img data-src="media/introduction/equi_pore_reser.jpg">
+								<img data-src="media/introduction/pore_new.svg">
 								<!--
 									zoom: une partie d'un système <<grand>>, loin des bords
 										TVN : pas forcément pore fermé
@@ -397,7 +504,8 @@
 									<li>
 										Faible confinement :
 										$\wallSeparation = 20 \unitLength$ /
-										$\wallLength = 20 \unitLength$ [à vérifier]
+										$\wallLength = 20 \unitLength$
+										<span class="alert">à vérifier</span>
 									</li>
 									<li>Mélange équimolaire : $\SMcomposition = 0,5$ /
 										Densité :
@@ -439,7 +547,7 @@
 									<li>
 										Champ : nul, perpendiculaire ou parallèle
 									</li>
-									<li>$\dip^\ast$, $\field^\ast$ [à compléter]</li>
+									<li>$\dip^\ast$, $\field^\ast$ <span class="alert">à compléter</span></li>
 								</ul>	
 							</td>
 						</table>
@@ -549,7 +657,7 @@
 						</div>
 
 						<table width="100%" id="table_alignement" class="fragment">
-							<!-- couleur : cohérent : orange / bleu -->
+							<span class="alert"> couleur : cohérence : orange / bleu</span>
 							<td width="33%">
 								<img data-src="media/results/field_mixture/Figure10b.png">
 							</td>
@@ -636,8 +744,8 @@
 								Le champ parallèle induit une séparation de phase.
 							</li>
 							<li>
-								Ces 2 champs induisent une structuration et/ou une ségrégation
-								au voisinnage de la surface.
+								Ces 2 directions du champ induisent une structuration et/ou une ségrégation
+								au voisinage de la surface.
 							</li>
 						</ul>
 
@@ -660,26 +768,20 @@
 					<section>
 						<h4>Motivation</h4>
 						<p class="fragment">
-							L'évolution temporelle est le mécanisme principal dans
-							certaines applications (e.g. "affichage", réponse à un champ modulé).
+							Pour certaines applications,
+							l'évolution temporelle est le but principal
+							(e.g. "affichage", réponse à un champ modulé).
 						</p>
 
 						<p></p>
 						<h4 class="fragment">Plan</h4>
-						<ol>
-							<li class="fragment">Modèle</li>
-							<li class="fragment">Profils de densité dans le pore</li>
-							<li class="fragment">
-								Dynamique d'inversion de population pour les systèmes réversibles
+						<ol class="fragment">
+							<li>Structures initiale et finale</li>
+							<li>
+								Dynamique : cycles réversible et irréversible
 							</li>
-							<li class="fragment">
-								Cycles irréversibles
-							</li>
-							<li class="fragment">
+							<li>
 								Rôle de la taille des particules et loi d'échelle
-							</li>
-							<li class="fragment">
-								Conclusion
 							</li>
 						</ol>
 					</section>
@@ -728,11 +830,11 @@
 										<li>
 											MD : HS (créneau) &rarr; WCA (différentiable) :
 											$u_\text{WCA}(\epsilon, r/\sigma) = 
-												\epsilon [r / \sigma \leq 2^{1/6}] \left\{
-												4 \left[
+												[r / \sigma \leq 2^{1/6}] \left\{
+												4 \epsilon \left[
 													\left( \frac{\sigma}{r} \right)^{12} -
 													\left(\frac{\sigma}{r} \right)^6
-												\right] + 1
+												\right] + \epsilon
 											\right\}.$
 										</li>
 										<li>Mélange monodisperse en taille (noir)</li>
@@ -749,7 +851,7 @@
 						<div class="fragment">
 							<p>Interactions dipolaires</p>
 							$u(\vec{r}_\ct{ij}, \vec{\dip}_\ct{i}, \vec{\dip}_\ct{j}) =
-							\frac{1}{4 \pi \permittivity}
+							\frac{1}{4 \pi \permittivity_\text{eff}}
 							\left[
 								\frac{\vec{\dip}_\ct{i} \cdot \vec{\dip}_\ct{j}}{r_\ct{ij}^3} -
 								3 \frac{(\vec{\dip}_\ct{i} \cdot \vec{r}_\ct{ij})
@@ -771,11 +873,11 @@
 						<table width="100%" id="table_alignement">
 							<td width="50%">
 								<img data-src="media/results/pinbi_dynamics/mc_vs_md_q0_ds.svg">
-								<p>SD</p>
+								<p>Sphères dipolaires (SD)</p>
 							</td>
 							<td>
 								<img data-src="media/results/pinbi_dynamics/mc_vs_md_q0_as.svg">
-								<p>SA</p>
+								<p>Sphères apolaires (SA)</p>
 							</td>
 							<!-- symboles / superposition ? -->
 						</table>
@@ -915,8 +1017,12 @@
 							</td>
 							<td>
 								<ul>
-									<li>Faible coefficient de frottement $\frictionCoefficient^\ast = 0,46$</li>
 									<li>
+										Faible coefficient de frottement $\frictionCoefficient^\ast = 0,46$
+										(et $\frictionCoefficient_\text{rot}^\ast = 0$).
+									</li>
+									<li>
+										<!-- densité ? -->
 										<span style="color: red">$\delta = 0,016$</span>, 
 										<span style="color: green">$\delta = 0,2$</span> :
 										réversibilité
@@ -934,7 +1040,7 @@
 						<p class="fragment">
 							<span class="attention">Echelle de temps</span> :
 							$\unitTime = \unitLength \sqrt{\unitMass / \unitEnergy} =
-							2,55e-5 \mathrm{s}$ ?
+							2,55e-5 \mathrm{s}$
 						</p>
 
 						<aside class="notes" data-markdown>
@@ -960,7 +1066,7 @@
 
 					<section>
 						<h4>
-							Loi d'échelle en fonction de $\frictionCoefficient^\ast$ et
+							Loi d'échelle en fonction de coefficient de frottement réduit et
 							champs croissants
 						</h4>
 						<table width="100%" id="table_alignement">
@@ -968,11 +1074,12 @@
 								<img data-src="media/results/pinbi_dynamics/md_q0-14-0_nearlyAdd_gammas_fit.svg">
 								<ul>
 									<li>
-										Linéarité : $t_\uparrow + t_\downarrow \propto \frictionCoefficient^\ast$
+										<span class="attention">Linéarité</span> :
+										$t_\text{cycle} = t_\uparrow + t_\downarrow \propto \frictionCoefficient^\ast$
 									</li>
 									<li>
 										Extrapolation : pour $\frictionCoefficient^\ast = 460$,
-										$t_\uparrow + t_\downarrow = 1500 \mathrm{s}$
+										$t_\text{cycle} = 1500 \mathrm{s}$
 									</li>
 								</ul>
 							</td>
@@ -1096,11 +1203,11 @@
 					</section>
 
 					<section>
-						<h4>Modèle</h4>
+						<h4>Estimation de $t_\text{cycle}$</h4>
 
 						<ul>
 							<li>Comportement linéaire en $\frictionCoefficient^\ast$,
-								coefficient de frottement <span class="alert">réduit</span> :
+								coefficient de frottement <span class="attention ">réduit</span> :
 								$\frictionCoefficient^\ast =
 								\frictionCoefficient \unitTime / \unitMass$,
 								$\frictionCoefficient = 3\pi \unitLength \dynamicViscosity$
@@ -1151,27 +1258,28 @@
 								<ol>
 									<li>
 										<!-- up + down -->
-										$\epsilon$ constant : $t_\mathrm{cycle} \propto \unitLength^3$.
+										$\epsilon$ constant : $t_\text{cycle} \propto \unitLength^3$.
 										Si $\unitLength = 1 \mathrm{\mu m}$ et
-										$t_\mathrm{cycle} = 1500 \mathrm{s}$, alors
-										$t_\mathrm{cycle} \sim 1,5 \mathrm{s}$ pour
+										$t_\text{cycle} = 1500 \mathrm{s}$, alors
+										$t_\text{cycle} \sim 1,5 \mathrm{s}$ pour
 										$\unitLength = 0,1 \mathrm{\mu m}$.
 									</li>
 									<li>
 										$\epsilon$ variable :
 										si $\epsilon \propto \unitLength^3$,
-										$t_\mathrm{cycle} = \mathrm{constant}$;
+										$t_\text{cycle} = \mathrm{constant}$;
 										si $\epsilon \propto \unitLength^2$,
-										$t_\mathrm{cycle} \propto \unitLength$.
+										$t_\text{cycle} \propto \unitLength$.
 										Pour $\unitLength = 1 \mathrm{nm}$,
-										$t_\mathrm{cycle} \sim 0,03 \mathrm{s}$ ?
+										$t_\text{cycle} \sim 0,03 \mathrm{s}$ ?
 									</li>
 								</ol>
 							</td>
+							<!-- coleur ? -->
 						</table>
 
 						<p>
-							$t_\mathrm{cycle}$ varie sur plusieurs ordres de grandeur
+							$t_\text{cycle}$ varie sur plusieurs ordres de grandeur
 							en fonction de $\unitLength$ : marge sur les temps de réponse
 							en fonction des applications envisagées.
 						</p>
@@ -1192,40 +1300,62 @@
 						<h3>Conclusion</h3>
 						<!-- Limites ? -->
 
+						Modèle de mélange de colloïdes confiné (une espèce pouvant être couplée à un champ)
+
 						<ul>
 							<li>
 								Approfondissement de l'étude des propriétés
-								d'<span class="attention">équilibre</span> dans un pore large
-								d'un mélange binaire sous champ
-								(mouillage, démouillage, structuration, séparation de phase, etc.).
+								d'<span class="attention">équilibre</span> dans un pore large.
+								Selon la direction du champ :
+								mouillage, démouillage, structuration, séparation de phase, etc.
 							</li>
 							<li>
-								Etude de la <span class="attention">dynamique</span> de l'inversion
-								de population sous champ dans un pore étroit en contact avec
-								un réservoir :
+								Le confinement et le champ perpendiculaire stabilisent le mélange,
+								à l'opposé du champ parallèle.
+							</li>
+							<li>
+								En ce qui concerne la <span class="attention">dynamique</span> de
+								l'inversion de population dans un pore étroit en contact avec
+								un réservoir (uniquement en champ normal) : 
 								<ul>
-									<!--
 									<li>
-										adaptation du modèle (interface explicite, champ non-uniforme,
-										etc.).
-									</li>
-									-->
-									<li>
-										influence sur le temps de remplissage/vidage de différents
-										paramètres
-										(intensité du champ, densité et composition &rarr;
-										irréversibilité).
+										adaptation du modèle (interface explicite,
+										champ non-uniforme, etc.).
 									</li>
 									<li>
-										tentatives de prédiction du temps de réponse
-										(des fluides moléculaires aux suspensions colloïdes).
+										Selon l'état thermodynamique :
+										<ul>
+											<li>
+												Cycle allumage extinction réversibles :
+												étude de l'influence sur la durée des cycles
+												$t_\text{cycle}$ de remplissage/vidage de différents
+												paramètres (intensité du champ, densité et composition).
+												Conclusion principale :
+												$t_\text{cycle}$ linéaire en coefficient de
+												frottement réduit.
+												Sur cette base et un modèle pour l'interaction répulsive
+												sphère-sphère, une loi d'échelle établie en fonction de
+												la taille des particules :
+												de l'ordre de <span class="attention">25 min à 0,03 s</span>
+												en passant du micromètre au nanomètre. 
+											</li>
+											<li>
+												Cycle irrréversibles ou intermédiaires :
+												soit la phase riche est sélectionnée par
+												le champ puis persiste après extinction,
+												soit retour vers une densité intermédiaire
+												métastable, mais cycle globalement reproductible.
+											</li>
+										</ul>
 									</li>
 								</ul>
 							</li>
-							<li>
-								Outils de simulation numérique disponible en open source
-								(modifications nécessaires apportées aux codes).
-							</li>
+							<!--
+								<li>
+									Outils de simulation numérique disponible en open source
+									(modifications nécessaires apportées aux codes).
+								</li>
+							-->
 						</ul>
 					</section>
 
@@ -1233,37 +1363,70 @@
 						<h3>Perspectives</h3>
 						<ul>
 							<li>
-								Etude du pore large : 
+								Etude du pore large à l'équilibre : 
 								<ul>
 									<li>
 										Dynamique de transition : durée de la structuration,
 										relaxation.
 									</li>
 									<li>
-										Caractérisation des méso structures : formes, persistance.
+										Caractérisation des mésostructures : formes, persistance.
 									</li>
 								</ul>
 							</li>
 							<li>
-								Approfondissement de la dynamique de l'inversion de population :
+								Pore large ou étroit :
+								étudier plus précisément les plus grands coefficients de frottement
+								(comportement de $t_\text{cycle}$ linéaire ?).
+							</li>
+							<li>
+								Dynamique de l'inversion de population dans d'autres systèmes :
 								<ul>
 									<li>
 										Echelle des colloïdes :
-										augmentation du coefficient de frottement réduit,
 										prise en compte des interactions
-										hydrodynamiques (e.g. DPD), substitution par des macro ions,
-										structures sous-jacentes plus réalistes (&rarr; expérience).
+										hydrodynamiques, <!-- (e.g. DPD) -->
+										particules chargées ?,
+										<!--
+											
+										-->
+										structures plus réalistes de la particule colloïdale
+										(&rarr; expérience).
 									</li>
 									<li>
 										Echelle du fluide moléculaire :
-										spécification des interactions particule-particule
-										et particule-mur (live wall).
+										au-delà des interactions purement répulsives,
+										confinement à l'échelle moléculaire.
 									</li>
-									<!-- <li>code ?</li> -->
 								</ul>
 							</li>
 						</ul>
-						<!-- vs LCD, OLED ? -->
+						<!--
+							vs LCD, OLED ?
+							effet collectif
+						-->
+
+						<aside class="notes" data-markdown>
+							- particules chargéees :
+							nous avons émis l'idée, pas évident : ("plus courant")
+							macro + co + contre ions + solvant
+							polarisabilité de ces ions
+							nuage : co/contre ions attirés par le champ
+							diélectrophorèse ?
+							les petites écranteraient le champ
+							longueur de debye,
+							cf. Israelachvili (polarisation)
+							- moléculaire :
+							partie attractive, plus d'index match : comme dans le vide,
+							[mode] nanotube, nanoconfinement
+							- applications :
+							champ continu/alternatif ?
+							intérêt du champ alternatif :
+							les particules chargées ne réagissent pas - mais attention 
+							si dipôles permanents / induits OK.
+							Pour les dipôles permanents : CN champ permanent.
+							- polarisabilité électronique : OK / orientation (globale) : non.
+						</aside>
 					</section>
 
 				</section>
@@ -1395,7 +1558,7 @@
 				history: true,
 				loop: true,
 				fragments: true,
-				width: "100%",
+				width: "65%",
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
@@ -1407,6 +1570,12 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+			Reveal.addEventListener( 'factory_theme', function() {
+				document.getElementById('theme').setAttribute('href','css/theme/beige.css');
+			}, false );
+			Reveal.addEventListener( 'main_theme', function() {
+				document.getElementById('theme').setAttribute('href','css/theme/sky.css');
+			}, false );
 		</script>
 	</body>
 </html>

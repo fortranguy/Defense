@@ -1,17 +1,21 @@
-.xz_profile {
-    width: 45%;
-}
-
-.animation {
-    width: 50%;
-}
-
 .attention {
     color: blue;
 }
 
 .alert {
     color: red;
+}
+
+#quotation {
+    font-style: italic;
+}
+
+.xz_profile {
+    width: 45%;
+}
+
+.animation {
+    width: 50%;
 }
 
 #table_alignement td {
