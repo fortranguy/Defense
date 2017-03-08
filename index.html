@@ -74,7 +74,8 @@
 						<ol class="fragment">
 							<li>Introduction : motivation et modèle</li>
 							<li>Propriétés d'équilibre en faible confinement</li>
-							<li>Aspects dynamiques de l'inversion de population sous champ</li>
+							<li>Propriétés dynamiques dont les temps caractéristiques
+								d'inversion de population</li>
 							<li>Conclusion et perspectives</li>
 						</ol>
 
@@ -167,17 +168,11 @@
 								dans un mélange (C. Brunet, 2009, PLMC),
 								résultats jugés suffisamment importants pour être développés.
 							</li>
-
-							<aside class="notes" data-markdown>
-								- simulation, modélisation, physique statistique, 
-								physique des liquides : étude en amont 
-								- cette thèse / E. Trizac : rapporteur/
-								structure et diagramme de phase
-							</aside>
+							
 						</ul>
 
 						<p></p>
-						<h4 class="fragment">Ingrédients physiques</h4>
+						<h4 class="fragment">Pourquoi un mélange confiné sous champ ?</h4>
 						<table width="100%" class="fragment" id="table_alignement">
 							<td width="25%">
 								<img data-src="media/introduction/model.png">
@@ -185,34 +180,46 @@
 							<td>
 								<ul>
 									<li>
-										mélange : plus riche qu'un monocomposant
-										(sélectivité, situations intermédiaires)
+										mélange : effets plus nombreux avec que pour
+										un fluide monocomposant
+										(sélectivité, situations intermédiaires, ...)
 										<!-- nature, expérience : rare corps pur -->
 									</li>
 									<li>
-										confinement : comportement plus varié qu'en phase volumique
+										confinement : comportements plus variés
+										qu'en phase volumique
 									</li>
 										<!-- PINBI : comme séparation de phase -->
 									<li>
-										champ extérieur : contrôle réversible et
+										champ extérieur : contrôle réversible, local et
 										&laquo; non intrusif &raquo;
 									</li>
 								</ul>
 							</td>
 						</table>
+
+						<aside class="notes" data-markdown>
+							- simulation, modélisation, physique statistique, 
+							physique des liquides : étude en amont 
+							- cette thèse / E. Trizac : rapporteur/
+							structure et diagramme de phase
+							- raisons de cette combinaison
+						</aside>
 					</section>
 
 					<section>						
-						<h4>Modèle physique</h4>
+						<h4>Avec quel modèle l'étudier ?</h4>
 
 						<ul>
 							<li class="fragment" data-fragment-index="1">
-								Mélange binaire à diamètres non-additifs :
+								Mélange binaire de
 								sphères dipolaires (SD) et apolaires (SA),
 								dont les interactions à courte portée sont purement répulsives
-								(simplification).
-								Correspond aux colloïdes stabilisés stériquement
-								ou avec une très courte longueur d'écrantage.
+								(simplification) et à diamètres non-additifs
+								<span class="fragment" data-fragment-index="2">
+								(la non-additivité positive ($\delta > 0$) favorise la démixtion
+								et donc des effets à champ faible).
+								</span>
 							</li>
 							<table width=50%>
 								<td class="fragment" data-fragment-index="2">
@@ -223,37 +230,35 @@
 								</td>
 							</table>
 							<p>
-								<span class="fragment" data-fragment-index="2">
-									La non-additivité positive ($\delta > 0$) favorise la démixtion.
-								</span>
 								<span class="fragment" data-fragment-index="3">
 									Pour la DM : assouplissement de l'interaction dure &rarr; 
 									potentiel mou (e.g. WCA).
 								</span>
 							</p>
-							<li class="fragment" data-fragment-index="4">
+							<li class="fragment" data-fragment-index="5">
 								Pas de solvant explicite ($\epsilon_\text{eff}$, $\gamma$).
 							</li>
-							<li class="fragment" data-fragment-index="5">
+							<li class="fragment" data-fragment-index="6">
 								Géométrie de confinement :
 								pore fente (deux murs parallèles sans structure) ou 
 								pore de taille finie avec interface explicite avec la phase
 								volumique (dynamique).
 							</li>
-							<li class="fragment" data-fragment-index="6">
+							<li class="fragment" data-fragment-index="7">
 								Champ extérieur : soit un champ uniforme normal ou parallèle aux
 								parois (pore-fente),
-								soit un champ normal localisé (pore avec interface explicite en DM).
+								soit un champ normal localisé (pour les études en DM).
 							</li>
 						</ul>
 
 						<aside class="notes" data-markdown>
+							- modèle minimaliste
 							- non-additivité :
 							déclinaison la plus simple -> mélange instable
 							- Etude : comme si champ électrique / certains aspects spécifiques
 							aux champs électriques. Mais mécanismes physiques / généraux->
 							peut être magnétique, e.g. ferrocolloïdes. 
-							- solvant : plus simple expression
+							- solvant : plus simple expression / dissymétrie de taille
 						</aside>
 					</section>
 
@@ -263,12 +268,13 @@
 							<li class="fragment">
 								Approfondir l'étude des propriétés d'équilibre
 								du fluide confiné dans un pore-fente :
-								généralisation, éclairage supplémentaire.
+								éclairage supplémentaire
+								(confinement moindre, effets dipolaires plus intenses).
 							</li>
 							<li class="fragment">
-								(Nouveauté) Etude de la dynamique pour des applications avec une
-								géométrie plus réaliste (interface slab/bulk) :
+								Etude de la dynamique des effets de champ :
 								transition entre 2 états d'équilibre, temps caractéristique, etc.
+								en prenant une géométrie réaliste (interface pore / réservoir).
 							</li>
 						</ol>
 						
@@ -285,15 +291,21 @@
 							<li>à l'échelle moléculaire : probablement</li>
 							<li>à l'échelle supramoléculaire : peut-être pas</li>
 						</ul>
+						<p class="fragment">
+							Ce modèle minimaliste peut être réalisé avec des colloïdes
+							stabilisés stériquement
+							(ou à des colloïdes chargés ayant une très courte longueur
+							d'écrantage).
+						</p>
 
 						<aside class="notes" data-markdown>
 							Pourquoi faire ?
 							2 directions principales
 							- équilibre : moins de confinement, dip plus
-
-							Avant de présenter nos résultats,
-							nous verrons des réalisations expérimentales :
-							comment ce modèle pourrait être réalisé concrètement.
+							- pas vers applications / nouveauté
+							- avant de présenter nos résultats,
+							prochains transparents : ce modèle est réalisable / pas irréaliste :
+							études expérimentales.
 						</aside>
 					</section>
 
@@ -313,19 +325,26 @@
 							<li class="fragment" data-fragment-index="2">
 								Non-additivité ($\delta$) faisable dans le cadre de
 								la stabilisation stérique
-								(e.g. interpénétration des polymères)
+								(e.g. interpénétration des couches superficielles polymériques)
 							</li>
 						</ul>
 						<table width="100%" id="table_alignement">
 							<td width="45%" class="fragment" data-fragment-index="1">
 								<img data-src="media/introduction/2spheres.svg">
+								<!-- schéma de principe -->
 							</td>
 							<td class="fragment" data-fragment-index="1">
-								<img data-src="media/introduction/hollow.png" >
+								<img data-src="media/introduction/core_shell.jpg">
+								<!-- à lire, reference : clausius mossoti eq. 7 / Janus ? -->
+								Honegger, Peyrade, Biomicrofluidics 6, 044115, (2012)
+								<p>
+									donnent le facteur de Clausius-Mossotti
+									$\Re[CMF(\omega)]$
+								</p>
 							</td>
 						</table>
 						<div class="fragment" data-fragment-index="2">
-							<img data-src="media/introduction/grafting.png">
+							<img data-src="media/introduction/grafting.png" width=75%>
 						</div>
 						<!-- réserve : greffe / -->
 
@@ -338,7 +357,8 @@
 
 					<section>
 
-						<h4>Dipôles magnétiques (permanents) : ferrocolloïdes</h4>
+						<h4>Dipôles magnétiques (permanents)</h4>
+						<!-- ferrocolloïdes -->
 						
 						<!-- proche de notre système -->
 						<p class="fragment">
@@ -353,7 +373,10 @@
 							<img data-src="media/introduction/less_dip.png" width=20%>
 							<img data-src="media/introduction/sacanna_separation.jpg" width=25%>
 						</div>
-						<!-- moment dipolaire : courbe ? -->
+						<!--
+							intensité des interactions dip olaires -> couche stabilisante /
+							courbe ?
+						-->
 
 						<aside class="notes" data-markdown>
 							- ferrofluide
@@ -437,13 +460,16 @@
 								(développé en interne)
 							</li>
 							<li class="fragment">
-								Système hors équilibre : dynamique moléculaire + Langevin
-								($\espresso{}$)
+								Système hors équilibre : code de dynamique moléculaire parallélisé
+								spécialisé dans les interactions dipolaires  ($\espresso{}$) :
+								algorithmes efficaces pour les sommes d'Ewald
 							</li>
+							<!--
 							<li class="fragment">
 								Interactions dipolaires : sommes d'Ewald + correction pour un pore
 								([YB99], ELC)
 							</li>
+							-->
 						</ul>
 
 						<aside class="notes" data-markdown>
@@ -452,6 +478,7 @@
 								- résultats qui semblaient qualitativement cohérent
 
 							MD + Langevin : pseudo-dynamique ?
+							- Espresso : algorithme efficace pour les sommes d'Ewald
 						</aside>
 					</section>
 				</section>
@@ -547,7 +574,11 @@
 									<li>
 										Champ : nul, perpendiculaire ou parallèle
 									</li>
-									<li>$\dip^\ast$, $\field^\ast$ <span class="alert">à compléter</span></li>
+									<li>
+										$\dip^\ast = 22,5 (2,01)$,
+										$\field^\ast = 0,18; 0,90$
+										<span class="alert">à compléter</span>
+										</li>
 								</ul>	
 							</td>
 						</table>
@@ -570,6 +601,7 @@
 								<p>bulk : pour différents $\nonAdditivity$</p>
 								<img data-src="media/results/field_mixture/coex_bulk.svg">
 								<p>La non-additivité favorise la démixtion.</p>
+								<p>Choix : $\delta = 0,05$</p>
 							</td>
 							<td class="fragment">
 								<p>slab</p>
@@ -633,7 +665,7 @@
 						<h4>Champ perpendiculaire</h4>
 
 						<div class="fragment">
-							<p>$\SMdensity = 0,64$, $\field^\ast = 0.18$ et $\field^\ast = 0.90$</p>
+							<p>$\SMdensity = 0,64$, $\field^\ast = 0,8$ et $\field^\ast = 0,90$</p>
 							<table width="100%" id="table_alignement">
 								<td width="33%">
 									<img data-src="media/results/field_mixture/Figure9a.svg">
@@ -748,11 +780,11 @@
 								au voisinage de la surface.
 							</li>
 						</ul>
-
+						! app
 						<p class="fragment">
 							Dans la suite de l'étude, nous considérons uniquement des champs
 							perpendiculaires parce qu'ils peuvent conduire à
-							des cycles allumage / extinction réversibles.
+							des cycles réversibles d'allumage et d'extinction du champ.
 						</p>
 					</section>
 				</section>
