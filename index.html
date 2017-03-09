@@ -329,23 +329,38 @@
 							</li>
 						</ul>
 						<table width="100%" id="table_alignement">
-							<td width="45%" class="fragment" data-fragment-index="1">
-								<img data-src="media/introduction/2spheres.svg">
-								<!-- schéma de principe -->
-							</td>
-							<td class="fragment" data-fragment-index="1">
-								<img data-src="media/introduction/core_shell.jpg">
-								<!-- à lire, reference : clausius mossoti eq. 7 / Janus ? -->
-								Honegger, Peyrade, Biomicrofluidics 6, 044115, (2012)
-								<p>
-									donnent le facteur de Clausius-Mossotti
-									$\Re[CMF(\omega)]$
-								</p>
-							</td>
+							<tr>
+								<td width="50%">
+									<div style="position:absolute" class="fragment current-visible" data-fragment-index="1">
+										<img data-src="media/introduction/dielectric_contrast.svg">
+									</div>
+									<div style="position:absolute" class="fragment current-visible" data-fragment-index="2">
+										<img data-src="media/introduction/dielectric_contrast+non_additivity.svg">
+									</div>
+									<!-- schéma de principe -->
+								</td>
+								<td class="fragment" data-fragment-index="1">
+									<img data-src="media/introduction/core_shell.jpg">
+									<!-- à lire, reference : clausius mossoti eq. 7 / Janus ? -->
+									<p>
+										Honegger et Peyrade, Biomicrofluidics 6, 044115, (2012)
+										donnent le facteur de Clausius-Mossotti
+										$\Re[CMF(\omega)]$
+									</p>
+								</td>
+							</tr>
+							<tr class="fragment" data-fragment-index="2">
+								<td>
+									<p>
+										Achilleos et Vamvakaki, Materials 3(3), 1981, (2010) :
+										méthodes de &laquo; greffage &raquo; de polymères
+									</p>
+								</td>
+								<td>
+									<img data-src="media/introduction/grafting.png">
+								</td>
+							</tr>
 						</table>
-						<div class="fragment" data-fragment-index="2">
-							<img data-src="media/introduction/grafting.png" width=75%>
-						</div>
 						<!-- réserve : greffe / -->
 
 						<aside class="notes" data-markdown>
@@ -368,11 +383,24 @@
 							&laquo; cristaux photoniques &raquo;, etc.
 							<!-- géométrie : faisable -->
 						</p>
-						<div class="fragment">
-							<img data-src="media/introduction/sacanna_title.png">
-							<img data-src="media/introduction/less_dip.png" width=20%>
-							<img data-src="media/introduction/sacanna_separation.jpg" width=25%>
-						</div>
+
+						<p class="fragment">
+							Sacanna et Philipse, Langmuir 22, 10209, (2006) : <br>
+							<span id="article_title">
+								Preparation and Properties of Monodisperse Latex Spheres with
+								Controlled Magnetic Moment for Field-Induced Colloidal
+								Crystallization and (Dipolar) Chain Formation
+							</span>
+						</p>
+
+						<table class="fragment">
+							<td>
+								<img data-src="media/introduction/sacanna_decay+core_shell.png">
+							</td>
+							<td>
+								<img data-src="media/introduction/sacanna_separation.gif">
+							</td>
+						</table>
 						<!--
 							intensité des interactions dip olaires -> couche stabilisante /
 							courbe ?
@@ -460,9 +488,16 @@
 								(développé en interne)
 							</li>
 							<li class="fragment">
-								Système hors équilibre : code de dynamique moléculaire parallélisé
-								spécialisé dans les interactions dipolaires  ($\espresso{}$) :
-								algorithmes efficaces pour les sommes d'Ewald
+								Système hors équilibre : $\espresso{}$
+								<ul>
+									<li>
+										code de dynamique moléculaire parallélisé
+									</li>
+									<li>
+										spécialisé dans les interactions dipolaires
+										(algorithmes efficaces pour les sommes d'Ewald)
+									</li>
+								</ul>
 							</li>
 							<!--
 							<li class="fragment">
@@ -517,8 +552,8 @@
 						<p>Géométrie : Fluide dans un pore fente infini (CLP selon $x, y$)</p>
 						<!-- aussi selon $z$ : correction électrostatique -->
 						<table width="100%" id="table_alignement">
-							<td width="40%">
-								<img data-src="media/introduction/pore_new.svg">
+							<td width="50%">
+								<img data-src="media/results/field_mixture/geometry.svg" width=45%>
 								<!--
 									zoom: une partie d'un système <<grand>>, loin des bords
 										TVN : pas forcément pore fermé
@@ -531,8 +566,8 @@
 									<li>
 										Faible confinement :
 										$\wallSeparation = 20 \unitLength$ /
-										$\wallLength = 20 \unitLength$
-										<span class="alert">à vérifier</span>
+										$\wallLength = 20 \unitLength \
+										(\wallLength = 30 \unitLength)$
 									</li>
 									<li>Mélange équimolaire : $\SMcomposition = 0,5$ /
 										Densité :
@@ -575,18 +610,21 @@
 										Champ : nul, perpendiculaire ou parallèle
 									</li>
 									<li>
-										$\dip^\ast = 22,5 (2,01)$,
-										$\field^\ast = 0,18; 0,90$
-										<span class="alert">à compléter</span>
-										</li>
+										$\dip^\ast = 22,5\ (\leftrightarrow \dip^{\ast\prime} = 2,01)$ /
+										$\field^\ast = 0,18; 0,90$ /
+										$\permittivity = 10 \permittivity_0$
+									</li>
 								</ul>	
 							</td>
 						</table>
 
 						<div class="fragment">
-							<p>Etude par simulation Monte-Carlo (canonique et GEMC)</p>
+							<p>Etude par simulation Monte-Carlo (canonique et GEMC) :</p>
 							<!-- homemade : code existant + Ewald optimisé à la Maggs -->
-							<p>($\ct{N}_\mathrm{\ds} = 1330 \text{ à } 4786$)</p>
+							<p>
+								$\ct{N}_\mathrm{\ds} = 1330 \text{ à } 4786$ /
+								$\ct{N}_\text{steps} = 32768 \text{ à } 65536$.
+							</p>
 						<div>
 					</section>
 
@@ -627,13 +665,19 @@
 							<p>$\SMdensity = 0,35$ et $\SMdensity = 0,47$</p>
 							<table width="100%" id="table_alignement">
 								<td width="33%">
-									<img data-src="media/results/field_mixture/noFieldLowDensity_profile.svg">
+									<img data-src="media/results/field_mixture/Figure3a.svg">
 								</td>
 								<td width="33%">
-									<img data-src="media/results/field_mixture/noFieldMedDensity_profile.svg">
+									<img data-src="media/results/field_mixture/Figure3b.svg">
 								</td>
 								<td>
-									<p>"démouillage" des murs par les dipôles</p>
+									<ul>
+										<li>
+											<span class="ds">sphères dipolaires</span> /
+											<span class="as">sphères apolaires</span>
+										</li>
+										<li>"démouillage" des murs par les dipôles</li>
+									</ul>
 								</td>
 							</table>
 							<!-- légende in figure ? -->
@@ -665,7 +709,7 @@
 						<h4>Champ perpendiculaire</h4>
 
 						<div class="fragment">
-							<p>$\SMdensity = 0,64$, $\field^\ast = 0,8$ et $\field^\ast = 0,90$</p>
+							<p>$\SMdensity = 0,64$ / $\field^\ast = 0,8$ et $\field^\ast = 0,90$</p>
 							<table width="100%" id="table_alignement">
 								<td width="33%">
 									<img data-src="media/results/field_mixture/Figure9a.svg">
@@ -689,7 +733,7 @@
 						</div>
 
 						<table width="100%" id="table_alignement" class="fragment">
-							<span class="alert"> couleur : cohérence : orange / bleu</span>
+							<!-- <span class="alert"> couleur : cohérence : orange / bleu</span> -->
 							<td width="33%">
 								<img data-src="media/results/field_mixture/Figure10b.png">
 							</td>
@@ -721,7 +765,7 @@
 						<h4>Champ parallèle</h4>
 
 						<div class="fragment">
-							<p>$\SMdensity = 0.47$, $\field_\parallel^\ast = 0,18$</p>
+							<p>$\SMdensity = 0,47$ / $\field_\parallel^\ast = 0,18$</p>
 							<table width="100%" id="table_alignement">
 								<td width="33%">
 									<img data-src="media/results/field_mixture/Figure15a.svg">
@@ -780,7 +824,7 @@
 								au voisinage de la surface.
 							</li>
 						</ul>
-						! app
+						<!-- app-->
 						<p class="fragment">
 							Dans la suite de l'étude, nous considérons uniquement des champs
 							perpendiculaires parce qu'ils peuvent conduire à
@@ -831,7 +875,7 @@
 							</td>
 							<td class="fragment">
 								<p>Champ extérieur</p>
-								<img data-src="media/results/pinbi_dynamics/field.svg">
+								<img data-src="media/results/pinbi_dynamics/field.svg" width=60%>
 								<!-- catastrophe ! -->
 								<ul>
 									<li>
@@ -883,12 +927,12 @@
 						<div class="fragment">
 							<p>Interactions dipolaires</p>
 							$u(\vec{r}_\ct{ij}, \vec{\dip}_\ct{i}, \vec{\dip}_\ct{j}) =
-							\frac{1}{4 \pi \permittivity_\text{eff}}
+							\frac{1}{4 \pi \permittivity}
 							\left[
 								\frac{\vec{\dip}_\ct{i} \cdot \vec{\dip}_\ct{j}}{r_\ct{ij}^3} -
 								3 \frac{(\vec{\dip}_\ct{i} \cdot \vec{r}_\ct{ij})
 									(\vec{r}_\ct{ij} \cdot \vec{\dip}_\ct{j})}{r_\ct{ij}^5}
-							\right]$
+							\right]$, $\permittivity = 10 \permittivity_0$
 						</div>
 
 						<!-- Rappel de l'interaction dipolaire : permittivity ? --> 
@@ -905,11 +949,11 @@
 						<table width="100%" id="table_alignement">
 							<td width="50%">
 								<img data-src="media/results/pinbi_dynamics/mc_vs_md_q0_ds.svg">
-								<p>Sphères dipolaires (SD)</p>
+								<p>Sphères dipolaires (<span class="ds">SD</span>)</p>
 							</td>
 							<td>
 								<img data-src="media/results/pinbi_dynamics/mc_vs_md_q0_as.svg">
-								<p>Sphères apolaires (SA)</p>
+								<p>Sphères apolaires (<span class="as">SA</span>)</p>
 							</td>
 							<!-- symboles / superposition ? -->
 						</table>
@@ -941,7 +985,7 @@
 						<table width="100%" id="table_alignement" class="fragment">
 							<td width="50%">
 								<img data-src="media/results/pinbi_dynamics/gamma0.046_nearlyAdd_q14_z.svg">
-								<p>cercles vides : SD, cercles pleins : SA</p>
+								<p><span class="ds">SD</span>, <span class="as">SA</span></p>
 							</td>
 							<td class="fragment">
 								<ul>
@@ -1072,7 +1116,7 @@
 						<p class="fragment">
 							<span class="attention">Echelle de temps</span> :
 							$\unitTime = \unitLength \sqrt{\unitMass / \unitEnergy} =
-							2,55e-5 \mathrm{s}$
+							2,55 \times 10^{-5} \mathrm{s}$
 						</p>
 
 						<aside class="notes" data-markdown>
@@ -1135,10 +1179,10 @@
 						<p>$\frictionCoefficient^\ast = 0,046$ (pour accélérer les simulations)</p>
 						<table width="100%" id="table_alignement">
 							<td width="50%" class="fragment">
+								<img data-src="media/results/pinbi_dynamics/gamma0.046_rho0.6_x0.1_nearlyVsNonAdd_q0-7-0.svg">
 								<p>
-									$\SMcomposition = 0,1$; $\SMdensity^\ast = 0,6$
+									$\SMcomposition = 0,1$ / $\SMdensity^\ast = 0,6$
 								</p>
-								<img data-src="media/results/pinbi_dynamics/gamma0.046_rho0.6_x0.1_nearlyVsNonAdd_q0-7-0.svg">								
 							</td>
 							<td class="fragment">
 								<ul>
@@ -1532,7 +1576,7 @@
 						<p>Verlet vitesse :</p>
 						<table width="100%" id="table_alignement">
 							<td width="50%">
-								<img data-src="media/methods/vv_scheme.svg">
+								<img data-src="media/methods/vv_scheme.svg" width=75%>
 							</td>
 							<td>
 								<ul>

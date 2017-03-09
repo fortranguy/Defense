@@ -6,8 +6,20 @@
     color: red;
 }
 
+#article_title {
+    font-style: italic;
+}
+
 #quotation {
     font-style: italic;
+}
+
+.ds {
+    color: blue;
+}
+
+.as {
+    color: green;
 }
 
 .xz_profile {

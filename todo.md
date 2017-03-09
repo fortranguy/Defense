@@ -11,4 +11,3 @@
     pore : 1 min -> maj (pas de L/G, démixé : une seule espèce dans le pore, même si densité
     non uniforme) :
     comme mix/demix en phase inhomogène
-- irrev : profil de densité
